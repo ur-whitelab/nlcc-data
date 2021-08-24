@@ -1,0 +1,38 @@
+on:
+  # Trigger the workflow on push or pull request
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python "3.8"
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Install nlcc
+        repository: whitead/nlcc
+        token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
+        path: nlcc
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Evaluate
+      run: |
+        export REPORT=`nlcc-eval data/**/*.yml -n 5`
+    - name: Report
+      - uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const { REPORT } = process.env
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: REPORT
+            })

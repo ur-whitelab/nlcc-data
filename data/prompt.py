@@ -1,3 +1,1 @@
-def test_smoke(fxn):
-  result = fxn(1)
-  return True if result == 10 else return False
+result = True if smoke(0) == 10 else False

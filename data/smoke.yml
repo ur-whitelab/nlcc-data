@@ -2,3 +2,5 @@ name: smoke
 language: python
 prompt: prompt.txt
 label: smoke.py
+context: python
+test: prompt.py
