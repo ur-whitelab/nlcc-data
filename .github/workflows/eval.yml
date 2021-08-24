@@ -14,8 +14,9 @@ jobs:
       with:
         python-version: "3.8"
     - name: Install nlcc
+      with:
         repository: whitead/nlcc
-        token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
+        token: ${{ secrets.PAT }} # `GitHub_PAT` is a secret that contains your PAT
         path: nlcc
     - name: Install dependencies
       run: |
@@ -23,6 +24,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Evaluate
       run: |
+        export OPENAI_API_KEY = ${{ secrets.OPENAI_API_KEY }}
         export REPORT=`nlcc-eval data/**/*.yml -n 5`
     - name: Report
       - uses: actions/github-script@v3
