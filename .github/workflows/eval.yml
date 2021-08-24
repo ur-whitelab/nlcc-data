@@ -32,10 +32,10 @@ jobs:
       id: run_evaluate
     - name: Report on PR
       uses: actions/github-script@v3
+      env:
+        REPORT: ${{steps.run_evaluate.outputs.report}}
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
-        env:
-          REPORT: ${{steps.run_evaluate.outputs.report}}
         script: |
             const { REPORT } = process.env
             github.issues.createComment({
