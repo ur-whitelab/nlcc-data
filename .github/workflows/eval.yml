@@ -26,7 +26,7 @@ jobs:
     - name: Evaluate
       env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: echo `pwd` && export REPORT=`nlcc-eval data/**/*.yml --n 5`
+      run: echo `ls` && export REPORT=`nlcc-eval data/**/*.yml --n 5`
     - name: Report
       uses: actions/github-script@v3
       with:
