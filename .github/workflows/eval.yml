@@ -35,7 +35,7 @@ jobs:
       env:
         REPORT: ${{steps.run_evaluate.outputs.report}}
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
         script: |
             const { REPORT } = process.env
             github.issues.createComment({
