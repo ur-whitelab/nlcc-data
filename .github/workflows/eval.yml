@@ -14,6 +14,7 @@ jobs:
       with:
         python-version: "3.8"
     - name: Install nlcc
+    - uses: actions/checkout@v2
       with:
         repository: whitead/nlcc
         token: ${{ secrets.PAT }} # `GitHub_PAT` is a secret that contains your PAT
