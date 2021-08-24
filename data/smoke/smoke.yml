@@ -1,6 +1,6 @@
 name: smoke
 language: python
-prompt: prompt.txt
+prompt: smoke.txt
 label: smoke.py
 context: python
-test: prompt.py
+test: smoke.py
