@@ -1,2 +1,5 @@
-x = 10
-# print x
+def smoke(x):
+  """
+  This function checks to make sure things are working
+  by returning 10
+  """
