@@ -1,1 +1,1 @@
-result = True if smoke(0,10) == 10 else False
+result = True if smoke(0) == 10 else False
