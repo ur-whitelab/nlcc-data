@@ -1,4 +1,0 @@
-name: smoke
-language: python
-prompt: prompt.txt
-label: smoke.py
