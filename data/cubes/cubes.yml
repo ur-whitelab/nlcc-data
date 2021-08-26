@@ -1,0 +1,6 @@
+name: cubes
+language: python
+prompt: cubes.txt
+label: cubes.py
+context: python
+test: cubes.py
