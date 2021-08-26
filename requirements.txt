@@ -1,1 +1,6 @@
 ./nlcc/
+numpy
+matplotlib
+pandas
+scipy
+scikit-learn
