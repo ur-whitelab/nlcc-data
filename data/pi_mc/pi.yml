@@ -1,0 +1,6 @@
+name: pi
+language: python
+prompt: pi.txt
+label: pi.py
+context: numpy
+test: pi.py
