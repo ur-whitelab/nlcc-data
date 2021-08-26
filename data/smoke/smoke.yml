@@ -1,0 +1,6 @@
+name: smoke
+language: python
+prompt: smoke.txt
+label: smoke.py
+context: python
+test: smoke.py
