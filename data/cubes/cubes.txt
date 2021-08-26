@@ -1,0 +1,4 @@
+def sum_of_cubes(n):
+  """
+  This function returns the sum of the first n cubes
+  """
