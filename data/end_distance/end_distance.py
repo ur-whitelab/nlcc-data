@@ -13,7 +13,7 @@ atom_pairs = np.array(atom_pairs)
 
 distance = md.compute_distances(pdb,atom_pairs)
 
-distance_prompt = get_distance()
+distance_prompt = get_distance('1L2y.pdb')
 
 diff = abs(distance_prompt - distance)
 
