@@ -1,0 +1,6 @@
+name: test
+language: python
+prompt: test.txt
+label: test.py
+context: mdtraj
+test: test.py

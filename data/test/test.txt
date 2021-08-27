@@ -1,0 +1,5 @@
+def compute_rg(pdb_file):
+  """
+  1) This function loads the pdb file
+  2) Calculates the radius of gyration
+  """
