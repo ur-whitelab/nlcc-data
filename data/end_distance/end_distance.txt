@@ -1,4 +1,4 @@
-def get_distance(x):
+def get_distance(X):
   """
   This fucntion returns the end to end distance of a protein X in nanometer using alpha carbon atoms.
   """
