@@ -1,0 +1,6 @@
+name: end_distance
+language: python
+prompt: end_distance.txt
+label: end_distance.py
+context: mdtraj
+test: end_distance.py
