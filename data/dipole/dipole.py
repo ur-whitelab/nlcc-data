@@ -1,7 +1,8 @@
 import numpy as np
-coordinates = np.loadtxt("data/dipole/water.xyz",usecols=(1,2,3))
+import os
+coordinates = np.loadtxt(os.path.join(_FILE_DIR_,"water.xyz"),usecols=(1,2,3))
 #note, these are fake
-charges = np.loadtxt("data/dipole/charges.txt")
+charges = np.loadtxt(os.path.join(_FILE_DIR_,"charges.txt"))
 my_dipole = (coordinates.T*charges).sum(axis=1)
 nl_dipole = dipole_moment(coordinates,charges) 
 print("My result:",my_dipole)
