@@ -6,10 +6,11 @@ top = pdb.topology
 
 CAs = [atom.index for atom in top.atoms if atom.name == 'CA']
 
-atom_pairs = []
-atom_pair = [CAs[0],CAs[-1]]
-atom_pairs.append(atom_pair)
-atom_pairs = np.array(atom_pairs)
+#atom_pairs = []
+#atom_pair = [CAs[0],CAs[-1]]
+#atom_pairs.append(atom_pair)
+#atom_pairs = np.array(atom_pairs)
+atoms_pairs = [[CAs[0],CAs[-1]]]
 
 distance = md.compute_distances(pdb,atom_pairs)
 
