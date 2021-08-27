@@ -1,4 +1,4 @@
 def random_walk(N,l=1.0,dim=2):
     """
-    This function a N steps, dim dimensional random walk, each step has length l in each dimension
+    This function generate a N steps, dim dimensional random walk, each step has length l in each dimension
     """
