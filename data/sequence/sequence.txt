@@ -1,0 +1,4 @@
+def gen_geometric_sequence(s,e,l):
+    """
+    This function return a geometric sequence that starts at s, ends at e with length l
+    """
