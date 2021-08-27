@@ -1,6 +1,5 @@
-name: random_walk
 language: python
 prompt: random_walk.txt
-label: random_walk.py
+label: random_walk
 context: numpy
 test: random_walk.py
