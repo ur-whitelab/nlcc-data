@@ -1,0 +1,6 @@
+name: matmul
+language: python
+prompt: matmul.txt
+label: matmul.py
+context: numpy
+test: matmul.py
