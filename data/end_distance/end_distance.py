@@ -16,7 +16,8 @@ distance = md.compute_distances(pdb,atom_pairs)
 
 distance_prompt = get_distance("1L2y.pdb")
 
-diff = abs(distance_prompt - distance)
+diff = abs(distance_prompt - distance[0,0])
+
 
 result = True if diff <= 0.01 else False
 
