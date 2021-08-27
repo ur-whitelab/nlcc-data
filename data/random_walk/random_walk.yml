@@ -1,0 +1,6 @@
+name: random_walk
+language: python
+prompt: random_walk.txt
+label: random_walk.py
+context: numpy
+test: random_walk.py
