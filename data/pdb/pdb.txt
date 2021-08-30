@@ -1,4 +1,4 @@
-def load_from_pdb('foo.pdb'):
+def load_from_pdb(filename):
   """
-  This function loads foo.pdb and returns the trajectory
+  This function loads a pdb file and returns the trajectory
   """
