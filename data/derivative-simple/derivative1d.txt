@@ -1,5 +1,5 @@
 def find_derivative(a,b,c,x):
   """
-  This fucntion evaluates a 1d polynomial with coefficients a,b,c, at a given point x
+  This fucntion generates a 1d polynomial with coefficients a,b,c and return value of derivatetive at a given point x
   """
 
