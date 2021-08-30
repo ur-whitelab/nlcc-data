@@ -1,4 +1,6 @@
-def compute_rg_nlcc(pdb_file):
+def protein_radius_of_gyration(pdb_file):
   """
-  This function loads a pdb and calulcates the radius of gyration
+  1. This function loads a pdb 
+  2. Calculates the radius of gyration
+  3. Returns it
   """
