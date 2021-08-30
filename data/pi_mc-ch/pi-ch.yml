@@ -1,0 +1,6 @@
+name: pi-ch
+language: python
+prompt: pi-ch.txt
+label: pi-ch.py
+context: numpy
+test: pi-ch.py
