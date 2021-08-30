@@ -1,0 +1,4 @@
+def temp_generator_nlcc(T_min,N_temp,T_max):
+  """
+  This function generates a list of N_temp temperatures from T_min to T_max
+  """
