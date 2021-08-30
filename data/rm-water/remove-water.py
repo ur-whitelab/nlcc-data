@@ -1,8 +1,6 @@
-import numpy as np
+import os
 import mdtraj as md 
 
 traj = md.load('trp-cage-small.trr', top='trp-cage.pdb')
 nowater = traj.remove_solvent()
-nowater.save('nowater.h5')
-newtraj = md.load('nowater.h5')
-result = True if newtraj.n_atoms == 284  else False
+result = True if remove_water(os.path.join(_FILE_DIR_,'trp-cage-small.trr'),os.path.join(_FILE_DIR_,'trp-cage.pdb')).n_atoms == nowater.n_atoms else False 
