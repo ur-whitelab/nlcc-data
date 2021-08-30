@@ -1,4 +1,4 @@
 def get_distance(X):
   """
-  This fucntion returns the distace between first and last alpha carbon atoms of the protein X in nanometer.
+  This function returns the distance between first and last alpha carbon atoms of the protein X in nanometers.
   """
