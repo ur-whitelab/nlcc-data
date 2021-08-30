@@ -1,0 +1,4 @@
+def load_from_pdb(foo.pdb):
+  """
+  This function loads foo.pdb and returns the structure
+  """
