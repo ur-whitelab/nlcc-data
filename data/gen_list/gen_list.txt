@@ -1,0 +1,4 @@
+def list_generator_nlcc():
+  """
+  This function returns a list of 40 numbers from 300 to 400
+  """
