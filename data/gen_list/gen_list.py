@@ -13,7 +13,7 @@ def list_generator(start,N,end):
     return np.array(list)
 
 my_list = list_generator(start,N,end)
-nlcc_list = list_generator_nlcc(start,N,end)
+nlcc_list = list_generator_nlcc()
 
 print("My result:", my_list)
 print("nlcc result", nlcc_list)
