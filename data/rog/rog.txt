@@ -1,0 +1,4 @@
+def compute_rg_nlcc(pdb_file):
+  """
+  This function loads a pdb and calulcates the radius of gyration
+  """
