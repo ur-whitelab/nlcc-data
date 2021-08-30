@@ -1,6 +1,6 @@
 def find_derivative(a,b,c,x):
   """
-  This fucntion generates a 2nd degree polynomial with coefficients a,b,c and return value of derivatetive at a given point x
+  This fucntion generates a 2nd degree polynomial with coefficients a,b,c and return derivatetive at x
 
   """
 
