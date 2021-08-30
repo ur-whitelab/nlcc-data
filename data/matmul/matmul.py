@@ -5,6 +5,6 @@ b = [[10,11,12],[13,14,15],[16,17,18]]
 
 c = np.matmul(a,b)
 
-d = get_matmul(a,b)
+d = matrix_multiplication(a,b)
 
-result = True if c==d else false
+result = True if np.all(c==d) else False
