@@ -1,9 +1,9 @@
 import numpy as np
 import sys
 
-T_min = float(sys.argv[1])
-N_temp = int(sys.argv[2])
-T_max = float(sys.argv[3])
+T_min = 300
+N_temp = 40
+T_max = 400
 
 def temp_generator(T_min,N_temp,T_max,power=1):
     templist=[]
