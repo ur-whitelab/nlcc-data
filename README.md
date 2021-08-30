@@ -6,6 +6,15 @@
 - Go to the repo URL and open a PR from pull requests tab
 - You will see a report with the result (did it pass), responses, and prompts after combining with context
 
+### Special variables
+Files can be accessed by the test scripts relative to the example `yml` file directory using the `_FILE_DIR_` variable. For example (from `dipole`):
+
+```
+import numpy as np
+import os
+coordinates = np.loadtxt(os.path.join(_FILE_DIR_,"water.xyz"),usecols=(1,2,3))
+```
+
 ## Available Prompts
 
 <details>
