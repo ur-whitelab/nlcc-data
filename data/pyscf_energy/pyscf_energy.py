@@ -9,7 +9,7 @@ def calc_molecule_energy(atom_coordinates,basis):
     return mf.kernel()
 
 my_energy = calc_molecule_energy(atom_coordinates,basis)
-#nlcc_energy = calc_molecule_energy_nlcc(atom_coordinates,basis)
+nlcc_energy = calc_molecule_energy_nlcc(atom_coordinates,basis)
 
 print("My result:", my_energy)
 print("nlcc result:", nlcc_energy)
