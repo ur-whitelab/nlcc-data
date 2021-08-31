@@ -1,4 +1,0 @@
-def load_from_pdb(filename):
-  """
-  This function loads a pdb file and returns the trajectory
-  """

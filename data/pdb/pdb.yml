@@ -1,6 +1,0 @@
-name: pdb
-language: python
-prompt: pdb.txt
-label: pdb.py
-context: mdtraj
-test: pdb.py
