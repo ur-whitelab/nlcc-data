@@ -1,4 +1,4 @@
 def remove_water(traj_file,top_file):
   """
-  This fucntion removes solvent from loaded traj_file given topology in top_file and returns the trajctory
+  This fucntion removes solvent from loaded trajectory traj_file and topology in top_file to return the new trajctory
   """
