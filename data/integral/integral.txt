@@ -1,0 +1,5 @@
+def find_integral(a,b,c,x):
+  """
+  This function generates a one dimensional polynomial with coefficients a,b,c,d and returns it's integral at x.
+
+  """
