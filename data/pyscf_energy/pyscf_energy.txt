@@ -1,0 +1,6 @@
+def calc_molecule_energy_nlcc(atom_coordinates,basis):
+  """
+  1 This function builds a molecule from gaussian type orbitals using the given atomic coordinates and basis set
+  2 Calculates the energy using Restricted Hartree Fock
+  3 Returns it
+  """
