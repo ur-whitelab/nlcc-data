@@ -1,6 +1,0 @@
-name: select-frames
-language: python
-prompt: select-frames.txt
-label: select-frames.py
-context: mdtraj
-test: select-frames.py
