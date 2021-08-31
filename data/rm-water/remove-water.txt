@@ -1,4 +1,0 @@
-def remove_water(traj_file,top_file):
-  """
-  This fucntion removes solvent from loaded traj_file and top_file and returns the trajctory
-  """

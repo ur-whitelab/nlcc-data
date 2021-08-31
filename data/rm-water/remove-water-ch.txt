@@ -1,0 +1,4 @@
+def remove_water(traj_file,top_file):
+  """
+  这个函数从加载的traj_file和top_file中除掉溶剂分子，返回动力学轨迹文件
+  """
