@@ -1,6 +1,0 @@
-name: derivative1d
-language: python
-prompt: derivative1d.txt
-label: derivative1d.py
-context: numpy
-test: derivative1d.py
