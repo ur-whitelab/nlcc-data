@@ -1,0 +1,6 @@
+Name: Matrix_Factorial 
+language: python
+Prompt: Matrix_Factorial.txt
+Label: Matrix_Factorial.py
+context: numpy
+Test: Matrix_Factorial.py
