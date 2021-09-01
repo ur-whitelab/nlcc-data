@@ -1,4 +1,4 @@
-def derivative(f,n,x,dx):
+def gradient(f,n,x,dx):
    """
    1 This function calculates nth order gradient of a N-dimesional function f, along x, with spacing dx
    2 returns the gradient array
