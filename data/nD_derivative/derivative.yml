@@ -2,5 +2,5 @@ name: derivative
 language: python
 prompt: derivative.txt
 label: derivative.py
-context: numpy
+context: python
 test: derivative.py
