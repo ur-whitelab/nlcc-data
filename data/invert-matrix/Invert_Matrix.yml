@@ -1,6 +1,6 @@
-Name: Invert_Matrix
+Name: invert_matrix
 language: python
-Prompt: Invert_Matrix.txt
-Label: Invert_Matrix.py
+Prompt: invert_matrix.txt
+Label: invert_matrix.py
 context: numpy
-Test: Invert_Matrix.py
+Test: invert_matrix.py
