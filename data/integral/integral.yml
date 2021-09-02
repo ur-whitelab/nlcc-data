@@ -1,0 +1,6 @@
+name: integral
+language: python
+prompt: integral.txt
+label: integral.py
+context: numpy
+test: integral.py

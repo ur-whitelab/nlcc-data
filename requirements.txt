@@ -5,3 +5,5 @@ pandas
 scipy
 scikit-learn
 mdanalysis
+mdtraj
+

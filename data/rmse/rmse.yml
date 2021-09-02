@@ -1,0 +1,6 @@
+name: rmse
+language: python
+prompt: rmse.txt
+label: rmse.py
+context: numpy
+test: rmse.py

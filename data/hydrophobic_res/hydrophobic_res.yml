@@ -1,0 +1,6 @@
+name: hydrophobic_res
+language: python
+prompt: hydrophobic_res.txt
+label: hydrophobic_res.py
+context: mdtraj
+test: hydrophobic_res.py
