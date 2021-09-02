@@ -8,7 +8,7 @@ def get_pair_indices(pdb_file):
     pdb = md.load(pdb_file)
     top = pdb.topology
     CAs = [atom.index for atom in top.atoms if atom.name == 'CA']
-    indices_pair = np.array[CAs[0], CAs[-1]]
+    indices_pair = np.array([CAs[0], CAs[-1]])
     return indices_pair
 
 my_indices_pair = get_pair_indices(pdb_file)
