@@ -1,6 +1,6 @@
-def get_distance(pdffile):
+def get_distance(pdf_file):
   """
   1. This function uploads a pdf file 
   2. Computes the distance between first and last alpha carbon atoms. 
-  3. Returns the result in naometers. 
+  3. Returns the result in nanometers. 
   """
