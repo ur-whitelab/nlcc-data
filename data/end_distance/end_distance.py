@@ -11,7 +11,7 @@ def compute_end_distance(pdf_file):
   distance = md.compute_distances(pdb,atom_pairs)[0][0]
   return distance
 my_distance = compute_end_distance(pdb_file)
-prompt_distance = get_distance(pdb_file)
+prompt_distance = calculate_distance(pdb_file)
 
 diff = abs(prompt_distance - my_distance)
 result = True if diff <= 0.01 else False
