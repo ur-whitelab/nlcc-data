@@ -1,6 +1,6 @@
-Name: matrix_factorial 
+name: matrix_factorial 
 language: python
-Prompt: matrix_factorial.txt
-Label: matrix_factorial.py
+prompt: matrix_factorial.txt
+label: matrix_factorial.py
 context: numpy
-Test: matrix_factorial.py
+test: matrix_factorial.py
