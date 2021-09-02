@@ -1,0 +1,6 @@
+name: matrix_factorial 
+language: python
+prompt: matrix_factorial_att2.txt
+label: matrix_factorial_att2.py
+context: numpy
+test: matrix_factorial_att2.py
