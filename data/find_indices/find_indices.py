@@ -12,7 +12,7 @@ def get_pair_indices(pdb_file):
     return indices_pair
 
 my_indices_pair = get_pair_indices(pdb_file)
-prompt_indices_pair = ca_indices(pdb_file)
+prompt_indices_pair = get_ca_indices(pdb_file)
 
 result = True if np.all(my_indices_pair == prompt_indices_pair) else False
 
