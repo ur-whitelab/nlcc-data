@@ -1,0 +1,4 @@
+def ca_indices(pdb_file):
+  """
+  This function uploads a pdb file and find out the indices of the first and last alpha carbon atoms.
+  """
