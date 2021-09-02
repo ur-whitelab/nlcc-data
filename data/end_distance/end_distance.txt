@@ -1,4 +1,4 @@
-def get_distance(pdf_file):
+def calculate_distance(pdf_file):
   """
   1. This function uploads a pdf file 
   2. Computes the distance between first and last alpha carbon atoms. 
