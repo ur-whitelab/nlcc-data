@@ -1,4 +1,6 @@
-def get_distance(X):
+def get_distance(pdffile):
   """
-  This function returns the distance between first and last alpha carbon atoms of the protein X in nanometers.
+  1. This function uploads a pdf file 
+  2. Computes the distance between first and last alpha carbon atoms. 
+  3. Returns the result in naometers. 
   """
