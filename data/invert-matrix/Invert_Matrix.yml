@@ -1,6 +1,0 @@
-Name: invert_matrix
-language: python
-Prompt: invert_matrix.txt
-Label: invert_matrix.py
-context: numpy
-Test: invert_matrix.py
