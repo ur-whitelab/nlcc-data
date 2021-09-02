@@ -1,7 +1,8 @@
 # nlcc-data
 
 ## Contribution instructions
-- First, make a branch with `git checkout -b <name>` 
+- First, make sure you're in the main branch with `git checkout main`, and update with `git pull origin`
+- Then, make a branch with `git checkout -b <name>` 
 - After preparing your prompt/test following the example in smoke, push with `git push origin <name>`
 - Go to the repo URL and open a PR from pull requests tab
 - You will see a report with the result (did it pass), responses, and prompts after combining with context
