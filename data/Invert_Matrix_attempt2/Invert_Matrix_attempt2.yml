@@ -1,6 +1,0 @@
-name: Invert_Matrix_attempt2
-language: python
-prompt: Invert_Matrix_attempt2.txt
-label: Invert_Matrix_attempt2.py
-context: numpy
-test: Invert_Matrix_attempt2.py
