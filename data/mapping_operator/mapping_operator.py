@@ -18,4 +18,4 @@ for s in range(M):
     CG_matrix[s] = CG_matrix[s] / np.sum(CG_matrix[s])
 
 result = True if np.isclose(
-    CG_matrix, [0.88809326, 0.05595337, 0.05595337]).all() else False
+    CG_matrix, mapping_operator(molecule, beads_mappings)).all() else False
