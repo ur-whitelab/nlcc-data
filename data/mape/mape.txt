@@ -1,4 +1,4 @@
 def mape(y_hat,y):
   """
-  This function computes the mean absolute percentage error between y_hat and y
+  This function computes the mean absolute percentage error (mape) between y_hat and y.
   """
