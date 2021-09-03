@@ -1,0 +1,6 @@
+name: mape
+language: python
+prompt: mape.txt
+label: mape.py
+context: python
+test: mape.py
