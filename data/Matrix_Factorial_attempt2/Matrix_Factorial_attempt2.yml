@@ -1,6 +1,0 @@
-name: Matrix_Factorial_attempt2 
-language: python
-prompt: Matrix_Factorial_attempt2.txt
-label: Matrix_Factorial_attempt2.py
-context: numpy
-test: Matrix_Factorial_attempt2.py
