@@ -1,9 +1,10 @@
 # importing libraries 
 import numpy as np
+import os
 import matplotlib.pyplot as plt
 
 # load data
-v = np.loadtxt("colvar", usecols=2, unpack=True)
+v = np.loadtxt(os.path.join(_FILE_DIR_, "colvar"), usecols=2, unpack=True)
 #print(v1.shape)
 
 def correl_fun(a,b):
