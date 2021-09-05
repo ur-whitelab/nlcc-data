@@ -1,0 +1,6 @@
+name: pib_1d  
+language: python
+prompt: pib_1d.txt
+label: pib_1d.py
+context: python
+test: pib_1d.py
