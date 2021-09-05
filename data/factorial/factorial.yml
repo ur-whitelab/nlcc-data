@@ -1,0 +1,6 @@
+name: factorial
+language: python
+prompt: factorial.txt
+label: factorial.py
+context: python 
+test: factorial.py

@@ -1,0 +1,4 @@
+def cal_factorial(x):
+   """
+   This function returns the value of factorial n.
+   """
