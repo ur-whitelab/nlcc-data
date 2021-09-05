@@ -1,0 +1,7 @@
+def radioactive(c_init, t_h, t):
+   """
+   c_init is the initial amount of radioactive element taken and t_h is the half life of that element.
+   This function finds the amount of radioactive element present after time t and returns it.
+   """
+
+
