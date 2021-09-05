@@ -1,7 +1,7 @@
-name: radioactive_decay
+name: radioactive-decay
 language: python 
-prompt: radioactive_decay.txt
-label: radioactive_decay.py
+prompt: radioactive-decay.txt
+label: radioactive-decay.py
 context: python
-test: radioactive_decay.py
+test: radioactive-decay.py
 
