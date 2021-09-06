@@ -1,0 +1,6 @@
+name: mdtraj-align-rmsd  
+language: python
+prompt: mdtraj-align-rmsd.txt
+label: mdtraj-align-rmsd.py
+context: mdtraj
+test: mdtraj-align-rmsd.py
