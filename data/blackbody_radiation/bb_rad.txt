@@ -1,0 +1,4 @@
+def bb_radiation(lam, T):
+   """
+   This function returns the spectral radiance value in SI unit for wavelength lam at temperature T, using planck's law of black body radiation.
+   """

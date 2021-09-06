@@ -1,0 +1,6 @@
+name: bb_rad  
+language: python
+prompt: bb_rad.txt
+label: bb_rad.py
+context: python
+test: bb_rad.py
