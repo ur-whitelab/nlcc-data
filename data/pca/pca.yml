@@ -1,0 +1,6 @@
+name: pca  
+language: python
+prompt: pca.txt
+label: pca.py
+context: python
+test: pca.py
