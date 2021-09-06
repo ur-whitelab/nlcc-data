@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 from matplotlib.pyplot import cm 
 
 # load data
-dist_data = np.loadtxt('pca-data.txt')
+dist_data = np.loadtxt(os.path.join(_FILE_DIR_, 'pca-data.txt'))
 #print(dist_data.shape)
 
 
