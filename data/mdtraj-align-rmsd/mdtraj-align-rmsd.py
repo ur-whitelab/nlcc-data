@@ -1,14 +1,15 @@
 # importing libraries
 import numpy as np
 import mdtraj as md 
+import os
 
 
 # load two structures
-apo = md.load_pdb('vinculin2-apo-protein.pdb')
-apo_top = md.load_pdb('vinculin2-apo-protein.pdb').topology
+apo = md.load_pdb(os.path.join(_FILE_DIR_,'vinculin2-apo-protein.pdb'))
+apo_top = md.load_pdb(os.path.join(_FILE_DIR_,'vinculin2-apo-protein.pdb')).topology
 
-holo = md.load_pdb('vinculin2-holo-protein.pdb')
-holo_top = md.load_pdb('vinculin2-holo-protein.pdb').topology
+holo = md.load_pdb(os.path.join(_FILE_DIR_,'vinculin2-holo-protein.pdb'))
+holo_top = md.load_pdb(os.path.join(_FILE_DIR_,'vinculin2-holo-protein.pdb')).topology
 
 # alpha carbons
 alphas_apo = [atom.index for atom in apo_top.atoms if atom.name == 'CA'][31::]
