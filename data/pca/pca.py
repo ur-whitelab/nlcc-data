@@ -1,5 +1,6 @@
 # importing libraries
 import numpy as np
+import os
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from matplotlib.pyplot import cm 
