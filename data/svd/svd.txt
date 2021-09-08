@@ -1,0 +1,4 @@
+def svd_f(X):
+   """
+   This functon does the singular value decomposition for the matrix X and retruns the three factors u,s and v.
+   """

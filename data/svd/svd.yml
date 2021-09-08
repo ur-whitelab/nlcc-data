@@ -1,0 +1,6 @@
+name: svd  
+language: python
+prompt: svd.txt
+label: svd.py
+context: numpy
+test: svd.py
