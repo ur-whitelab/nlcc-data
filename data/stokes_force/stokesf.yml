@@ -1,0 +1,6 @@
+name: stokesf  
+language: python
+prompt: stokesf.txt
+label: stokesf.py
+context: python
+test: stokesf.py
