@@ -1,0 +1,7 @@
+name: fourier_transform  
+language: python
+prompt: fourier_transform.txt
+label: fourier_transform.py
+context: numpy
+test: fourier_transform.py
+
