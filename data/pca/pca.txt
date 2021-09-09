@@ -1,0 +1,6 @@
+def do_pca(X,n_comp):
+   """
+   This function does the principal component analysis for data set X with n_comp number of components.
+   It returns first two components with highest variance.
+   It also makes a scatter plot for PC1 vs. PC2 with colorbar. 
+   """
