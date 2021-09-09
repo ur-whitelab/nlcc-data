@@ -1,0 +1,6 @@
+name: density_sphere  
+language: python
+prompt: density_sphere.txt
+label: density_sphere.py
+context: numpy
+test: density_sphere.py

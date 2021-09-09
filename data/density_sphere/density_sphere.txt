@@ -1,0 +1,6 @@
+def den_sphere(rin, rout, m):
+   """
+   This function calculates the density of a hollow sphere with mass m, inner radius rin and outer radius rout.
+   And returns the density.
+   """
+
