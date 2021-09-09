@@ -2,5 +2,5 @@ name: density_sphere
 language: python
 prompt: density_sphere.txt
 label: density_sphere.py
-context: numpy
+context: python
 test: density_sphere.py
