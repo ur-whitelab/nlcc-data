@@ -20,11 +20,11 @@ for xi in x:
     else:
         pass
 
-#print("prime numbers :", primes)
+print("prime numbers :", primes)
 #print("# of prime numbers :", len(primes))
 
 primes_codex = prime_numbers(x_min, x_max)
-
+print("prime numbers from codex :", primes_codex)
 
 # check 
 if np.all(primes == primes_codex):
