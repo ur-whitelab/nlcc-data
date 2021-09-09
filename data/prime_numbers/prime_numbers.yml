@@ -2,5 +2,5 @@ name: prime_numbers
 language: python
 prompt: prime_numbers.txt
 label: prime_numbers.py
-context: numpy
+context: python
 test: prime_numbers.py
