@@ -1,0 +1,6 @@
+name: max-boltz  
+language: python
+prompt: max-boltz.txt
+label: max-boltz.py
+context: python
+test: max-boltz.py
