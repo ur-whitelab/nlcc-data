@@ -45,7 +45,7 @@ c_vv_nlcc = cal_correl_fun(v,v)
 
 
 # check
-if np.all(abs(c_vv - c_vv_nlcc) <= 1e-3):
+if np.all(abs(c_vv - c_vv_nlcc) <= 1e-3) == True:
     result = True
 else:
     result = False
