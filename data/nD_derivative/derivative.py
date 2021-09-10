@@ -32,7 +32,7 @@ for i in range(n):
 
 
 # check
-if np.all(f_der_xi == derivative(f_data, n, ax, dx)):
+if np.all(f_der_xi == derivative(f_data, n, ax, dx)) == True:
     result = True
 else:
     result = False
