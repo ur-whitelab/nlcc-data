@@ -1,6 +1,6 @@
 def prime_numbers(x0,x1):
    """
-   This funciton returns all the prime numbers between x0 to x1.
+   This funciton returns all the prime numbers between x0 and x1.
    """
 
 
