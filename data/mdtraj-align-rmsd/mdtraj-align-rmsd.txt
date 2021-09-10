@@ -1,0 +1,4 @@
+def align_rmsd(a,b,ca,cb):
+   """
+   This function aligns a to b and then calculates rmsd of a with respect to b using ca, cb atoms in respectively a and b.
+   """
