@@ -1,8 +1,9 @@
 import numpy as np
+import os
 import matplotlib.pyplot as plt
 
 # load data
-x, y = np.loadtxt('input.dat', usecols=(0,1), unpack=True)
+x, y = np.loadtxt(os.path.join(_FILE_DIR_,'input.dat'), usecols=(0,1), unpack=True)
 
 
 m = (np.mean(x*y) - np.mean(x)*np.mean(y))/np.std(x)**2
