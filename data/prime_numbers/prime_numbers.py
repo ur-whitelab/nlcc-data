@@ -27,7 +27,7 @@ primes_codex = prime_numbers(x_min, x_max)
 print("prime numbers from codex :", primes_codex)
 
 # check 
-if np.all(primes == primes_codex) = True:
+if np.all(primes == primes_codex) == True:
     result = True
 else:
     result = False
