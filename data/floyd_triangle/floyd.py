@@ -17,4 +17,4 @@ floyd_triangle(n_rows)
 
 
 # check 
-result = True if floyd_traingle(n_rows) != None else False
+result = True if floyd_triangle(n_rows) != None else False
