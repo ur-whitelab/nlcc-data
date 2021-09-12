@@ -30,7 +30,7 @@ plt.show()
 m_cod, c_cod = linear_fit(x,y)
 
 # check
-if abs(m - m_cod) and abs(c - c_cod) <= 1e-2:
+if abs(m - m_cod) <= 1e-2 and abs(c - c_cod) <= 1e-2:
     result = True
 else:
     result = False
