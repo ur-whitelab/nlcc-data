@@ -1,4 +1,4 @@
 def floyd_triangle(n):
    """
-   This function prints the Floyd's triangle for n rows.
+   This function returns the Floyd's triangle for n rows.
    """
