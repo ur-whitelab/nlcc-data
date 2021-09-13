@@ -1,0 +1,6 @@
+name: determinant
+language: python
+prompt: determinant.txt
+label: determinant.py
+context: numpy
+test: determinant.py
