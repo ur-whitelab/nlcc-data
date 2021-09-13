@@ -1,0 +1,4 @@
+def area_triangle(x,y,z):
+   """
+   这个函数返回边长为x，y，z的三角形的面积。
+   """
