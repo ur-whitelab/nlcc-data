@@ -1,0 +1,6 @@
+name: pascal  
+language: python
+prompt: pascal.txt
+label: pascal.py
+context: python
+test: pascal.py
