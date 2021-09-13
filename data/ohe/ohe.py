@@ -9,7 +9,6 @@ m = len(unique_list)
 ohe_array = np.zeros((n, m))
 j = 0
 for i in range(n):
-        print(j)
         ohe_array[j, unique_list.index(dog_breeds[i])] = 1.
         j += 1
 
