@@ -1,0 +1,6 @@
+name: Num_trials
+language: python
+prompt: pred_interval.txt
+label: pred_interval.py
+context: numpy
+test: pred_interval.py
