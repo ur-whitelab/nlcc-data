@@ -1,0 +1,7 @@
+def electric_side_chains(X):
+    """
+    This function takes the amino acid one letter code X and returns "positive" if X has a positive electrically charged side chain,
+    "negative" if X has a negative electrically charged side chain,
+    "no e charge" if X has no electrically charged side chain, or
+    "error" if X does not correspond to a valid amino acid.
+    """
