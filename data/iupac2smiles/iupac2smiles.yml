@@ -1,0 +1,9 @@
+from Users.samanthacox.Desktop.iupac2smiles import iupac2smiles
+
+
+name: iupac2smiles
+language: python
+prompt: iupac2smiles.txt
+label: iupac2smiles.py
+context: smiles
+test: iupac2smiles.py
