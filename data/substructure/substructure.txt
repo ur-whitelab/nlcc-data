@@ -1,4 +1,4 @@
 def substructure(smiles, library):
     """
-    This function takes a smiles string and searches the library to find entries that contain the substructure. 
+    This function takes a smiles string and searches the library to find entries that contain the substructure. It returns the indices of these entries.
     """
