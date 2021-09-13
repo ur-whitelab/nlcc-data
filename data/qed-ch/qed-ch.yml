@@ -1,0 +1,6 @@
+name: qed
+language: python
+prompt: qed-ch.txt
+label: qed-ch.py
+context: rdkit
+test: qed-ch.py
