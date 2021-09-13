@@ -1,6 +1,6 @@
-name: dipole
+name: discretize
 language: python
-prompt: dipole.txt
-label: dipole.py
+prompt: discretize.txt
+label: discretize.py
 context: numpy
-test: dipole.py
+test: discretize.py
