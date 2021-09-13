@@ -1,0 +1,6 @@
+name: rank
+language: python
+prompt: rank-ch.txt
+label: rank-ch.py
+context: numpy
+test: rank-ch.py
