@@ -1,0 +1,6 @@
+name: dipole
+language: python
+prompt: dipole.txt
+label: dipole.py
+context: numpy
+test: dipole.py
