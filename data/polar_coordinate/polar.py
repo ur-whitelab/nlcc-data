@@ -16,7 +16,7 @@ r_co, theta_co, phi_co = polar_coord(x,y,z)
 
 
 # check
-if np.isclose([r, theta, phi], [r_co, theta_co, phi_co]) ==  True:
+if np.allclose([r, theta, phi], [r_co, theta_co, phi_co]) ==  True:
     result = True 
 else:
     result = False
