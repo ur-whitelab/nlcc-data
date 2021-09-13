@@ -1,0 +1,6 @@
+name: substructure
+language: python
+prompt: substructure.txt
+label: substructure.py
+context: rdkit
+test: substructure.py
