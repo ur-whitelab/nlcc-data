@@ -1,0 +1,6 @@
+name: pair_wise
+language: python
+prompt: pair_wise-ch.txt
+label: pair_wise-ch.py
+context: mdtraj
+test: pair_wise-ch.py
