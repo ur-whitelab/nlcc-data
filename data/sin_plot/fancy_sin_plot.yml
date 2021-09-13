@@ -1,0 +1,6 @@
+name: sin_plot
+language: python
+prompt: fancy_sin_plot.txt
+label: fancy_sin_plot.py
+context: numpy
+test: 
