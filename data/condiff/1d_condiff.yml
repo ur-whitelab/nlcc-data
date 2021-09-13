@@ -1,0 +1,6 @@
+name: 1d_condiff
+language: python
+prompt: 1d_condiff.txt
+label: 1d_condiff.py
+context: python
+test: 1d_condiff.py

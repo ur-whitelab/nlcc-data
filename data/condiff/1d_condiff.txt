@@ -1,0 +1,4 @@
+def 1d_condiff(x):
+  """
+  This function computes the difference between consecutive elements in array x.
+  """
