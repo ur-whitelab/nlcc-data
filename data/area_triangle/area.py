@@ -14,7 +14,7 @@ print(area)
 area_codex= area_triangle(a,b,c)
 
 # check 
-if np.isclose(area, area_coedx) == True:
+if np.isclose(area, area_codex) == True:
     result = True
 else:
     result = False
