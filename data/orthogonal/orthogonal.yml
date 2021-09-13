@@ -1,0 +1,6 @@
+name: orthogonal  
+language: python
+prompt: orthogonal.txt
+label: orthogonal.py
+context: python
+test: orthogonal.py

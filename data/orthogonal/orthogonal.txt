@@ -1,0 +1,5 @@
+def orthogonal(a,b):
+   """
+   This function checks if the two wave functions a and b are orthogonal to each other.
+   And returns True if they are orthogonal otherwise False.
+   """
