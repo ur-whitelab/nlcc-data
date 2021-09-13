@@ -1,0 +1,4 @@
+def sum_d(x_min, x_max):
+   """
+   This function returns a list of all the integers wihtin the range x_min to x_max, whose sum of digits is an even number.
+   """

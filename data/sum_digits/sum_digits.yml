@@ -1,0 +1,6 @@
+name: sum_digits  
+language: python
+prompt: sum_digits.txt
+label: sum_digits.py
+context: python
+test: sum_digits.py
