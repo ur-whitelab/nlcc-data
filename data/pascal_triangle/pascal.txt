@@ -1,0 +1,4 @@
+def pascal_triangle(n):
+   """
+   This function returns the Pascal's triangle upto n rows.
+   """
