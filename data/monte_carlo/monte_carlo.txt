@@ -1,0 +1,7 @@
+def monte_carlo_sampling(x0, n, u(x)):
+   """
+   1 This function does monte carlo sampling for a particle in one dimension with initial position x0
+   2 u(x) is a function which returns the value of potential energy 
+   3 It runs for n steps and returns a final array containing position of the particle for each step, including initial position.
+   """
+

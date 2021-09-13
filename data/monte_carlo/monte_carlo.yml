@@ -1,0 +1,8 @@
+name: monte_carlo
+language: python
+prompt: monte_carlo.txt
+label: monte_carlo.py
+context: numpy
+test: monte_carlo.py
+
+
