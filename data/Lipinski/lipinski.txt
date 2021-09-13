@@ -1,6 +1,6 @@
 def lipinski_rule_of_five(smiles):
     """
-    This function calculates the Lipinski descriptors of the given SMILES string and returns which of Lipinski's rules the molecule violates.
+    This function calculates the Lipinski descriptors of the given SMILES string and returns a boolean to indicate if Lipinski's rule of five was satisfied.
     
     Lipinski's rules are:
     Hydrogen bond donors <= 5
