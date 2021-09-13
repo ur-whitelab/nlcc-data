@@ -1,6 +1,0 @@
-name: aromatic_aa
-language: python
-prompt: aromatic_aa.txt
-label: aromatic_aa.py
-context: python
-test: aromatic_aa.py
