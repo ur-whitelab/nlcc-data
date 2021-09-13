@@ -1,0 +1,4 @@
+def cal_correl_fun(x,y):
+   """
+   此函数计算两个给定数据集x，y的相关函数C_xy并返回C_xy。
+   """
