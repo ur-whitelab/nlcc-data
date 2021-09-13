@@ -1,0 +1,6 @@
+name: polar  
+language: python
+prompt: polar.txt
+label: polar.py
+context: python
+test: polar.py
