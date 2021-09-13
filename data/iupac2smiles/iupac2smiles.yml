@@ -1,5 +1,3 @@
-from Users.samanthacox.Desktop.iupac2smiles import iupac2smiles
-
 
 name: iupac2smiles
 language: python
