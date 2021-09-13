@@ -1,6 +1,0 @@
-name: electric_side_chains
-language: python
-prompt: electric_side_chains.txt
-label: electric_side_chains.py
-context: python
-test: electric_side_chains.py

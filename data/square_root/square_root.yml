@@ -1,0 +1,6 @@
+name: square_root
+language: python
+prompt: square_root.txt
+label: square_root.py
+context: python
+test: square_root.py

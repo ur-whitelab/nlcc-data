@@ -1,0 +1,3 @@
+def sqare_root(x,n):
+    """
+    This function takes the square root of x and reports to n decimal places.
