@@ -1,0 +1,6 @@
+name: sin
+language: python
+prompt: sin.txt
+label: sin.py
+context: python
+test: sin.py
