@@ -1,0 +1,4 @@
+def ohe(a):
+  """
+  This function generates one-hot encodings for the categorial variables in list a.
+  """
