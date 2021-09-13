@@ -1,0 +1,5 @@
+def area_under(fx,dx):
+    """
+    Compute the area under the curve fx using trapezoidal rule. 
+    dx is the spacing between sample points
+    """

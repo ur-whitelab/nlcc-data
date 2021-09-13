@@ -1,0 +1,6 @@
+name: AUC
+language: python
+prompt: auc.txt
+label: auc.py
+context: numpy
+test: auc.py
