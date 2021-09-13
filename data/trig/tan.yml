@@ -1,0 +1,6 @@
+name: tan
+language: python
+prompt: tan.txt
+label: tan.py
+context: python
+test: tan.py
