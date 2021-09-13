@@ -1,0 +1,6 @@
+name: taylor_series
+language: python
+prompt: taylor_series.txt
+label: taylor_series.py
+context: numpy
+test: taylor_series.py
