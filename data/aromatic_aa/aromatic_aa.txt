@@ -1,0 +1,4 @@
+def aromatic_aa(X):
+    """
+    This function takes in the amino acid one letter code string X and returns "aromatic" if aromatic, or "non-aromatic" if X is non-aromatic
+    """
