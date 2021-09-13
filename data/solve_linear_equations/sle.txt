@@ -1,4 +1,4 @@
 def sle(eqns):
   """
-  This function solves a linear system of equations {['a_0x_0 + b_0x_1 = c0','a_1x_0 + b_1x_1 = c1']}.
+  This function solves a system of linear equations {['a_0x_0 + b_0x_1 = c0','a_1x_0 + b_1x_1 = c1']}.
   """
