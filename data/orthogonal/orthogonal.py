@@ -26,7 +26,7 @@ y3  = (alpha/np.pi)**(1/4) * np.exp(-alpha*x**2/2.0) * (2*alpha**1.5*x**3 -3*np.
 
 
 # calcualte the overlap integral
-d = np.trapz(y0*y2, x, axis=0) 
+d = np.trapz(y0*y1, x, axis=0) 
 
 if orthogonal(y0,y1) == np.isclose(d, 0.0):
     result = True
