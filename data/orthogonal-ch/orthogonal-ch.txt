@@ -1,0 +1,4 @@
+def orthogonal(a,b):
+   """
+   如果两个波函数a和b彼此正交，则此函数返回True，否则返回False。
+   """
