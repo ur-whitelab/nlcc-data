@@ -1,0 +1,6 @@
+name: gen_list
+language: python
+prompt: gen_list-ch.txt
+label: gen_list-ch.py
+context: numpy
+test: gen_list-ch.py
