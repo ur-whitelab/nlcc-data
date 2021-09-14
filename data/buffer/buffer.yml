@@ -1,0 +1,6 @@
+name: buffer
+language: python
+prompt: buffer.txt
+label: buffer.py
+context: python
+test: buffer.py
