@@ -1,0 +1,5 @@
+def subarray_sum(a,n,s):
+   """
+   This function returns a list containing the starting and ending posiitons of the first such occurring subarray of an array a of size n, from the left where sum equals to s.
+   If no such subarray is found, it returns an array consisting only one element that is -1.
+   """

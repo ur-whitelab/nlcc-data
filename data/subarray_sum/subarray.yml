@@ -1,0 +1,6 @@
+name: subarray
+language: python
+prompt: subarray.txt
+label: subarray.py
+context: python
+test: subarray.py
