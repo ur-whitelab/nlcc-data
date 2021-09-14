@@ -1,0 +1,6 @@
+name: diag
+language: python
+prompt: diag.txt
+label: diag.py
+context: numpy
+test: diag.py

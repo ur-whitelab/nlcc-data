@@ -1,0 +1,4 @@
+def diag(x):
+  """
+  This function returns P and D matrices which result from diagonalizing matrix x
+  """
