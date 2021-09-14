@@ -1,6 +1,0 @@
-name: 1d_fourier
-language: python
-prompt: 1d_fourier.txt
-label: 1d_fourier.py
-context: python
-test: 1d_fourier.py
