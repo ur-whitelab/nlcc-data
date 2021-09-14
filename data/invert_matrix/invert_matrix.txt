@@ -1,0 +1,4 @@
+def invert_matrix(A):
+    """
+    This function computes the inverse of matrix A
+    """

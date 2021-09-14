@@ -6,3 +6,5 @@ scipy
 scikit-learn
 pybel
 rdkit-pypi
+mdanalysis
+mdtraj
