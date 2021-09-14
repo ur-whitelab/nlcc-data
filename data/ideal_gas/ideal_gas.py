@@ -1,3 +1,5 @@
+import numpy as np
+
 # input
 V = 20.0    # volume (in L)
 n = 10.0    # in moles
