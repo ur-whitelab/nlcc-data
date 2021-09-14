@@ -2,5 +2,5 @@ name: square_root
 language: python
 prompt: square_root.txt
 label: square_root.py
-context: python
+context: numpy
 test: square_root.py
