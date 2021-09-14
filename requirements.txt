@@ -6,4 +6,4 @@ scipy
 scikit-learn
 mdanalysis
 mdtraj
-
+rdkit-pypi
