@@ -1,0 +1,4 @@
+def geometric_mean(x):
+   """
+   This function returns the geometric mean of data set x.
+   """
