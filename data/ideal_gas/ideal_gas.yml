@@ -1,0 +1,6 @@
+name: ideal_gas
+language: python
+prompt: ideal_gas.txt
+label: ideal_gas.py
+context: python
+test: ideal_gas.py

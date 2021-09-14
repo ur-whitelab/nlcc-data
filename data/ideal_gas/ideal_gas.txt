@@ -1,0 +1,5 @@
+def ideal_gas_equ(n,r,t,v):
+   """
+   This function returns the pressure for n moles of gas at temperature t with volume v, using ideal gas equation of state. 
+   r is the universal gas constant. 
+   """
