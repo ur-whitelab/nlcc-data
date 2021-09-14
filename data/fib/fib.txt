@@ -1,0 +1,4 @@
+def fib(x):
+  """
+  This function returns the xth number in a fibonacci series
+  """

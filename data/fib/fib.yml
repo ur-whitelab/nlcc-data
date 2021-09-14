@@ -1,0 +1,6 @@
+name: fib
+language: python
+prompt: fib.txt
+label: fib.py
+context: python
+test: fib.py
