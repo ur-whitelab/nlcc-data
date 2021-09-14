@@ -1,4 +1,4 @@
-def aromatic_aa(X):
+def aromatic_aa(sequence):
     """
-    This function takes in the amino acid one letter code string X and returns "aromatic" if aromatic, "non-aromatic" if X is non-aromatic, or "error" if X does not correspond to an amino acid
+    This function takes in an amino acid sequence and returns the number of aromatic residues there are
     """
