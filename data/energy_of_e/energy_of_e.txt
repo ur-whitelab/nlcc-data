@@ -1,0 +1,4 @@
+def energy_of_e(n):
+    """
+    This function calculates the energy in Joules of an electron in state n in a hydrogen atom 
+    """
