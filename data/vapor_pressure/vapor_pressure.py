@@ -1,4 +1,4 @@
 h2o_smiles = "O"
-h2o_vp = 0.03
+h2o_vp = 0.0313
 
-result = True if vapor_pressure("O")==0.03 else False
+result = True if vapor_pressure("O")==0.0313 else False
