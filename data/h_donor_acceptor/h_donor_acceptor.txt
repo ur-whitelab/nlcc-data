@@ -1,8 +1,0 @@
-def h_donor_acceptor(X):
-    """
-    This function takes in the one letter Amino Acid code X and 
-    returns "both" if X has both hydrogen donor atoms and hydrogen acceptor atoms in its side chain, 
-    "donor" if X has a hydrogen donor atom in its side chain, but not a hydrogen acceptor atom,  
-    "acceptor" if X has a hydrogen acceptor atom in its side chain, but not a hydrogen donor atom.
-    or returns "error" if X does not correspond to an amino acid
-    """
