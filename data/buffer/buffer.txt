@@ -1,0 +1,5 @@
+def cal_ph(pk,s_c,a_c):
+   """
+   This function returns the pH of a buffer solution using henderson hasselbalch equation.
+   Here pk is the acid dissociation constant and s_c, a_c are salt and acid concentrations respectively.
+   """
