@@ -1,0 +1,7 @@
+def arrhenius(k2,t2,t1,ea,r):
+   """
+   This function returns the value of rate constant at temperature t1 by using arrhenius equation.
+   k2 is the rate constant at temperature t2.
+   ea is the activation energy.
+   r is the universal gas constant.
+   """
