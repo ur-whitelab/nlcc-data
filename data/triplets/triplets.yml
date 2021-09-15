@@ -1,0 +1,6 @@
+name: triplets
+language: python
+prompt: triplets.txt
+label: triplets.py
+context: python
+test: triplets.py
