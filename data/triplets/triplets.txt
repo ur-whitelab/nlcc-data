@@ -1,0 +1,4 @@
+def count_triplets(x):
+   """
+   This function returns the count of all the triplets in array x, such that sum of any two elements equals a third element.
+   """
