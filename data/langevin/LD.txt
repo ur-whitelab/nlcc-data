@@ -1,0 +1,4 @@
+def run_langevin_dynamics(q0,p0,m,gamma,run_temp,PE,F,steps,dt=0.001,k_B=1.0):
+    """
+    This function runs langevin dynamics simluations given initial position q0, initial momemtum p0, mass m, friction gamma, temperature run_temp, potential energy function PE, force function F, timestep dt, Boltzmann constant k_B, for steps steps, and return trakectories of position and momentum.
+    """
