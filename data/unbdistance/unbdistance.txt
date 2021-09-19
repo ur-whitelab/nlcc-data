@@ -1,0 +1,6 @@
+def unbdistance(traj,top,lig_str):
+  """
+  This function returns a list of distances between center of mass of 
+  protein and center of mass of lig_str in every frame of trajectory
+  traj with topology top
+  """
