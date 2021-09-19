@@ -1,0 +1,5 @@
+def cog(pos,top):
+  """
+  This function returns an array containing the center of geometry for each frame in trajectory pos
+  and topology top
+  """
