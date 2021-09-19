@@ -1,0 +1,5 @@
+def com(pos,top):
+  """
+  This function returns an array containing the center of mass for each frame in trajectory pos
+  and topology top
+  """
