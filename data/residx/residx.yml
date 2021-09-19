@@ -1,0 +1,5 @@
+name: residx
+language: python
+prompt: residx.txt
+context: mdtraj
+test: residx.py
