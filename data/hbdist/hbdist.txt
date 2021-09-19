@@ -1,0 +1,5 @@
+def hbdist(pdb):
+  """
+  This function returns the distances between donor and acceptors of hydrogen 
+  bonds in file pdb 
+  """

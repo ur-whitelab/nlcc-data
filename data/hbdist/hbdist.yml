@@ -1,0 +1,6 @@
+name: hbdist
+language: python
+prompt: hbdist.txt
+label: hbdist.py
+context: mdtraj
+test: hbdist.py
