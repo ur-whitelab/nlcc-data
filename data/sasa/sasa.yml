@@ -1,0 +1,6 @@
+name: sasa
+language: python
+prompt: sasa.txt
+label: sasa.py
+context: mdtraj
+test: sasa.py
