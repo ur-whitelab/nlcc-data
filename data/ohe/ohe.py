@@ -12,4 +12,4 @@ for i in range(n):
         ohe_array[j, unique_list.index(dog_breeds[i])] = 1.
         j += 1
 
-result = True if np.isclose(ohe(dog_breeds), ohe_array) else False
+result = True if np.isclose(ohe(dog_breeds), ohe_array).all() else False
