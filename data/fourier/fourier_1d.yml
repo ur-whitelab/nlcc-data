@@ -2,5 +2,5 @@ name: fourier_1d
 language: python
 prompt: fourier_1d.txt
 label: fourier_1d.py
-context: python
+context: numpy
 test: fourier_1d.py
