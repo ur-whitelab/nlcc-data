@@ -1,4 +1,12 @@
+import math
 h2o_smiles = "O"
-h2o_vp = 0.0313
+a = 0.61094
+b = 17.635
+c = 243.04
+T = 25
 
-result = True if vapor_pressure("O")==0.0313 else False
+exp_1 = ((b*T)/(T+c))
+exp_2 = math.exp(exp_1)
+vp_calc = a*exp_2
+
+result = True if vapor_pressure("O")==vp_calc else False
