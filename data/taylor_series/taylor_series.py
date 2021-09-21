@@ -14,4 +14,4 @@ x = math.radians(45)
 n = 8
 
 result = True if np.isclose(taylor_series(
-    func_cos, x, n), func_cos(x,n)) else False
+    np.cos,x,n), func_cos(x,n)) else False
