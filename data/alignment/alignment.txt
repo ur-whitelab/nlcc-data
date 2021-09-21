@@ -1,0 +1,5 @@
+def protein_alignment(pdb_file):
+  """
+  1. This function loads a pdb
+  2. aligns the trajectory
+  3. Returns it

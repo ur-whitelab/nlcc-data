@@ -1,0 +1,6 @@
+name: alignment
+language: python
+prompt: alignment.txt
+label: alignment.py
+context: mdtraj
+test: alignment.py
