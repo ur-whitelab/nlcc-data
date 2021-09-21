@@ -2,5 +2,5 @@ name: cos
 language: python
 prompt: cos.txt
 label: cos.py
-context: python
+context: numpy
 test: cos.py

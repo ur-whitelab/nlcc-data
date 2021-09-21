@@ -2,5 +2,5 @@ name: sin
 language: python
 prompt: sin.txt
 label: sin.py
-context: python
+context: numpy
 test: sin.py
