@@ -1,4 +1,4 @@
 def kld(true_data, predicted_data):
   """
-  This function calculates the Kullback–Leibler (KL) divergence loss between predicted data and true data.
-  """
+  This function calculates the Kullback–Leibler (KL) divergence loss between true_data and predicted_data.
+  ""
