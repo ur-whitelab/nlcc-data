@@ -1,0 +1,6 @@
+name: eigen
+language: python
+prompt: eigen.txt
+label: eigen.py
+context: numpy
+test: eigen.py
