@@ -1,0 +1,4 @@
+def f_cos(x):
+  """
+  This function computes the cosine of all elements in array x.
+  """
