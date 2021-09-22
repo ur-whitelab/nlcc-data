@@ -9,9 +9,9 @@ da_dist = md.compute_distances(system, h_bonds[:,[0,2]], periodic=False)
 num = len(h_bonds)
 # assert
 hb_dist = hbdist(top_path)
-idx_1 = random.randint(0,num)
+idx_1 = 1 # random.randint(0,num)
 check1 = abs(hb_dist[idx_1] - da_dist[idx_1])
-idx_2 = random.randint(0,num)
-check2 = abs(hb_dist[idx_2] - da_dist[idx_2])
+#idx_2 = random.randint(0,num)
+#check2 = abs(hb_dist[idx_2] - da_dist[idx_2])
 tol = 0.01
 result = True if check1 <= tol else False
