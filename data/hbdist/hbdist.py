@@ -10,8 +10,9 @@ num = len(h_bonds)
 # assert
 hb_dist = hbdist(top_path)
 idx_1 = random.randint(0,num)
-check1 = hb_dist[idx_1] == da_dist[idx_1]
+check1 = abs(hb_dist[idx_1] - da_dist[idx_1])
 idx_2 = random.randint(0,num)
-check2 = hb_dist[idx_2] == da_dist[idx_2]
+check2 = abs(hb_dist[idx_2] - da_dist[idx_2])
+tol = 0.01
 
-result = True if check1 and check2 else False
+result = True if check1 <= tol else False
