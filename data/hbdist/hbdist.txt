@@ -1,6 +1,4 @@
 def hbdist(pdb):
   """
-  1. This function uploads the file pdb.
-  2. It calculates the distances between donor atom and acceptor atom of hydrogen bonds in the file pdb.
-  3. Then it returns the values of distances. 
+  This function returns the distances between donor and acceptor atoms of hydrogen bonds in the file pdb. 
   """
