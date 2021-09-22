@@ -14,5 +14,4 @@ check1 = abs(hb_dist[idx_1] - da_dist[idx_1])
 idx_2 = random.randint(0,num)
 check2 = abs(hb_dist[idx_2] - da_dist[idx_2])
 tol = 0.01
-
 result = True if check1 <= tol else False
