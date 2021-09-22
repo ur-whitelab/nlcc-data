@@ -8,7 +8,7 @@ h_bonds = md.baker_hubbard(system, periodic=False)
 da_dist = md.compute_distances(system, h_bonds[:,[0,2]], periodic=False)
 num = len(h_bonds)
 # assert
-hb_dist = hbdist(top_path)
+hb_dist = hbond_distance(top_path)
 idx_1 = 1 # random.randint(0,num)
 check1 = abs(hb_dist[idx_1] - da_dist[idx_1])
 #idx_2 = random.randint(0,num)
