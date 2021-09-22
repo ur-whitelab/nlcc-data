@@ -1,0 +1,6 @@
+name: kld
+language: python
+prompt: kld.txt
+label: kld.py
+context: numpy
+test: kld.py
