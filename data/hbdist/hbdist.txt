@@ -1,6 +1,6 @@
-def hbdist(pdb):
+def hbond_distance(pdb):
   """
   1. This function reads the file pdb.
-  2. It identifies the donor and acceptor atoms of hydrogen bonds in the file pdb. 
-  3. It calculates and returns the values of distances between the donor and acceptor atoms. 
+  2. It identifies the h-boned atoms. 
+  3. It calculates and returns the values of distances between each pair of h-bonded atoms. 
   """
