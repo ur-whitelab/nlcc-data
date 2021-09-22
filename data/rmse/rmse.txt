@@ -1,4 +1,4 @@
 def rmse(a,b):
   """
-  This fucntion evaluates the root mean square error (rmse) between a and b.
+  This function evaluates the root mean square error (rmse) between a and b.
   """
