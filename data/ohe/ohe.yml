@@ -1,0 +1,6 @@
+name: ohe
+language: python
+prompt: ohe.txt
+label: ohe.py
+context: numpy
+test: ohe.py
