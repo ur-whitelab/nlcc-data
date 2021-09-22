@@ -2,5 +2,5 @@ name: hbdist
 language: python
 prompt: hbdist.txt
 label: hbdist.py
-context: python
+context: mdtraj
 test: hbdist.py
