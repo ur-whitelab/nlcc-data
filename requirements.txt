@@ -8,3 +8,4 @@ pybel
 rdkit-pypi
 mdanalysis
 mdtraj
+sympy
