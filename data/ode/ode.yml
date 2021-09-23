@@ -1,0 +1,6 @@
+name: solve_ode
+language: python
+prompt: ode.txt
+label: ode.py
+context: numpy
+test: ode.py
