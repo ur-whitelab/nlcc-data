@@ -1,0 +1,6 @@
+name: floyd  
+language: python
+prompt: floyd.txt
+label: floyd.py
+context: python
+test: floyd.py
