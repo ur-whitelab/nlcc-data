@@ -1,0 +1,5 @@
+def den_sphere(rin, rout, m):
+   """
+   此函数返回质量为m，内径为rin，外径为rout的空心球体密度。
+   """
+
