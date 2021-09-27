@@ -1,0 +1,5 @@
+def cal_partition(W,T):
+   """
+   1 It calculates the partition function for simple harmonic oscillator with oscillation frequency W, at tmeperature T
+   2 and returns the value of partiton fuction
+   """

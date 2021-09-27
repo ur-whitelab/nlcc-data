@@ -1,0 +1,6 @@
+name: partition_sho  
+language: python
+prompt: partition_sho.txt
+label: partition_sho.py
+context: python
+test: partition_sho.py
