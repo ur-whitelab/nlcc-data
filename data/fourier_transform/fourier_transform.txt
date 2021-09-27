@@ -1,0 +1,4 @@
+def fourier_transform(x):
+   """
+   It returns the fourier transformed function of x.
+   """

@@ -1,0 +1,4 @@
+def fourier_transform(x):
+   """
+   返回x的傅立叶变换函数。
+   """
