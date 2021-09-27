@@ -1,6 +1,7 @@
 import mdtraj as md
 import os
 import math
+import numpy as np
 
 
 #_FILE_DIR_ = '.'
@@ -22,7 +23,7 @@ for i,j in zip(traj2,traj3):
 
 # assert
 
-distances = unbdistance(traj_path,top_path,lig_str)
+distances = unbdistance(traj,lig_str)
 
 check = math.isclose(dist[0],distances[0])
 check2 = math.isclose(dist[-1],distances[-1])
