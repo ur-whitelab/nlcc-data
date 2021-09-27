@@ -1,0 +1,4 @@
+def cal_correl_fun(x,y):
+   """
+   This function calculates the correlation function C_xy for two given data sets x,y and returns C_xy.
+   """
