@@ -1,0 +1,4 @@
+def area_triangle(x,y,z):
+   """
+   This function returns the area of a triangle with sides x, y and z.
+   """

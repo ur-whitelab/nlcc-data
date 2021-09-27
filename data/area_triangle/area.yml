@@ -1,0 +1,6 @@
+name: area  
+language: python
+prompt: area.txt
+label: area.py
+context: python
+test: area.py

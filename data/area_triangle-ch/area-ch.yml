@@ -1,0 +1,6 @@
+name: area  
+language: python
+prompt: area-ch.txt
+label: area-ch.py
+context: python
+test: area-ch.py
