@@ -1,4 +1,0 @@
-def determinant(a):
-  """
-  This function calculates the determinant of square matrix a.
-  """
