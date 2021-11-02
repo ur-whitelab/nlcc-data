@@ -1,4 +1,4 @@
 def dipole_moment(coordinates, charges):
   """
-  This function returns the dipole moment for the molecule with positions given by coordinates
+  Returns the dipole moment
   """
