@@ -1,5 +1,4 @@
-def aa_polarity(sequence):
+def polar_count(sequence):
     """
-    This function 
-    1. Takes in amino acid sequence and returns the number of polar, non-charged residues there are
+    This function counts the number of polar, non-charged amino acids in the given sequence
     """

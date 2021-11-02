@@ -1,4 +1,4 @@
 
 sample_sequence = "ACRZSSDP"
 
-result = True if aa_polarity(sample_sequence) == 3 else False
+result = True if polar_count(sample_sequence) == 3 else False
