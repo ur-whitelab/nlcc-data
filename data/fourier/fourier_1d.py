@@ -7,4 +7,4 @@ true_y = fft(x)
 
 test_y = fourier_1d(x)
 
-result = True if numpy.allclose(true_y,test_y) else False
+result = True if np.allclose(true_y, test_y) else False
