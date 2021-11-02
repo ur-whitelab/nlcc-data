@@ -1,4 +1,4 @@
 def eigen(M):
     """
-    This function calculates the eigenvalues and eigenvectors for a square matrix M
+    Return eigenvalues and eigenvectors for a square matrix M
     """
