@@ -1,4 +1,0 @@
-def taylor_series(f, x, n):
-  """
-  This function evaluates the taylor series approximation of function f at point x for n terms in the series
-  """
