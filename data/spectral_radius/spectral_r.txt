@@ -1,4 +1,4 @@
 def spectral_r(a):
   """
-  This function calculates the spectral radius of the input sqaure matrix.
+  This function calculates the spectral radius of the input sqaure matrix a.
   """
