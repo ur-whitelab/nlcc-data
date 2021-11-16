@@ -4,3 +4,4 @@ prompt: ohe.txt
 label: ohe.py
 context: numpy
 test: ohe.py
+categories: stats, code

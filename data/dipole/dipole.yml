@@ -4,3 +4,4 @@ prompt: dipole.txt
 label: dipole.py
 context: numpy
 test: dipole.py
+categories: genchem, code

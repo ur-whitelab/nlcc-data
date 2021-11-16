@@ -9,7 +9,7 @@
 
 ## Categories of Prompts
 
-- Topic: cheminf, spectroscopy, qm, md, genchem, numerics, other, stats, thermo, vis
+- Topic: cheminf, spectroscopy, qm, md, bio, genchem, numerics, other, stats, thermo, vis
 - Eval: code, human
 - Special: disabled
 

@@ -4,3 +4,4 @@ prompt: aromatic_aa.txt
 label: aromatic_aa.py
 context: python
 test: aromatic_aa.py
+categories: bio, code

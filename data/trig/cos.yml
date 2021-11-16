@@ -4,3 +4,4 @@ prompt: cos.txt
 label: cos.py
 context: numpy
 test: cos.py
+categories: numerics, code

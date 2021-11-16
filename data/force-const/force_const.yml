@@ -4,3 +4,4 @@ prompt: force_const.txt
 label: force_const.py
 context: numpy
 test: force_const.py
+categories: spectroscopy, code

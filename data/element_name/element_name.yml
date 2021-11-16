@@ -4,3 +4,4 @@ prompt: element_name.txt
 label: element_name.py
 context: python
 test: element_name.py
+categories: genchem, code

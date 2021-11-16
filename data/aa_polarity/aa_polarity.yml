@@ -4,3 +4,4 @@ prompt: aa_polarity.txt
 label: aa_polarity.py
 context: python
 test: aa_polarity.py
+categories: bio, code

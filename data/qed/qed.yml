@@ -4,3 +4,4 @@ prompt: qed.txt
 label: qed.py
 context: rdkit
 test: qed.py
+categories: cheminf, code

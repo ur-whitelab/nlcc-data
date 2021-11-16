@@ -4,3 +4,4 @@ prompt: eigen-ch.txt
 label: eigen-ch.py
 context: numpy
 test: eigen-ch.py
+categories: numerics, code, ch

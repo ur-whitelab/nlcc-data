@@ -4,3 +4,4 @@ prompt: sle.txt
 label: sle.py
 context: sympy
 test: sle.py
+categories: numerics, code

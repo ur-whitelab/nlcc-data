@@ -4,3 +4,4 @@ prompt: fourier_1d.txt
 label: fourier_1d.py
 context: numpy
 test: fourier_1d.py
+categories: numerics, code

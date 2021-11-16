@@ -4,3 +4,4 @@ prompt: lipinski.txt
 label: lipinski.py
 context: rdkit
 test: lipinski.py
+categories: cheminf, code

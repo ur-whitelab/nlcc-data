@@ -4,3 +4,4 @@ prompt: substructure.txt
 label: substructure.py
 context: rdkit
 test: substructure.py
+categories: cheminf, code

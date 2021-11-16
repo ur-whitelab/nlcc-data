@@ -4,3 +4,4 @@ prompt: energy_of_e.txt
 label: energy_of_e.py
 context: python
 test: energy_of_e.py
+categories: qm, code

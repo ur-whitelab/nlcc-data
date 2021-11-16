@@ -4,3 +4,4 @@ prompt: kld.txt
 label: kld.py
 context: numpy
 test: kld.py
+categories: stats, code
