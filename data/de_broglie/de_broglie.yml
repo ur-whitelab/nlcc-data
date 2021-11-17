@@ -1,0 +1,7 @@
+name: de_broglie  
+language: python
+prompt: de_broglie.txt
+label: de_broglie.py
+context: python
+test: de_broglie.py
+categories: qm, genchem, code
