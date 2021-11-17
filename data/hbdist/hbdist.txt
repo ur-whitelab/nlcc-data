@@ -1,6 +1,5 @@
-def hbond_distance(pdb_file):
-  """
-  1. This function reads the file pdb_file.
-  2. It identifies all pairs of hbonded atoms. 
-  3. It calculates and returns the length of every hbonded pair
-  """
+def hbond_distance(trj):
+    """
+    This function finds all the hydrogen bonds in trj
+    It then returns the distance between each hydrogen bonded atom pair
+    """
