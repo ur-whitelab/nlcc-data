@@ -1,0 +1,7 @@
+def max_boltz_rms_speed(T,M):
+   """
+   This function returns the rms speed of a molecule in m/s
+
+   The temperature is T in Kelvin 
+   The molecule has mass M in kiolograms
+   """
