@@ -10,4 +10,4 @@ mdanalysis
 mdtraj
 mendeleev
 sympy
-
+pyscf
