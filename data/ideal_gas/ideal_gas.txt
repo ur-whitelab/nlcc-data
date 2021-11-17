@@ -1,0 +1,5 @@
+def ideal_gas_pressure(n,V,T):
+   """
+   This function returns the pressure for n moles of an ideal gas at temperature T and volume V, using the ideal gas equation of state. 
+   The pressure returned is in atm units.
+   """
