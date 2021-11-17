@@ -4,3 +4,4 @@ prompt: pyscf_energy.txt
 label: pyscf_energy.py
 context: pyscf
 test: pyscf_energy.py
+categories: qm, code
