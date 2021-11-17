@@ -4,3 +4,4 @@ prompt: max-boltz.txt
 label: max-boltz.py
 context: python
 test: max-boltz.py
+categories: genchem, thermo, code

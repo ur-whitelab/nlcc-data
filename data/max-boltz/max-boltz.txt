@@ -1,5 +1,7 @@
-def max_boltz_speed(T):
+def max_boltz_rms_speed(T,M):
    """
-   1 This function returns an array of RMS speeds of oxygen molecule at temperatures T in S.I unit, using 3D Maxwell Boltzmann speed distribution.
-   2 It also makes a plot of RMS speed vs. temperature.
+   This function returns the rms speed of a molecule in m/s
+
+   The temperature is T in Kelvin 
+   The molecule has mass M in kiolograms
    """
