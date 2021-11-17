@@ -1,0 +1,5 @@
+def find_derivative(a,b,c,x):
+  """
+  This function generates a 2nd degree polynomial with coefficients a,b,c and return derivative at x
+  """
+

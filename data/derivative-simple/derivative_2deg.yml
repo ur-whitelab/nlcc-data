@@ -1,0 +1,7 @@
+name: derivative_2deg
+language: python
+prompt: derivative_2deg.txt
+label: derivative_2deg.py
+context: numpy
+test: derivative_2deg.py
+categories: numerics, code

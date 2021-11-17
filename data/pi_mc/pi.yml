@@ -4,3 +4,4 @@ prompt: pi.txt
 label: pi.py
 context: numpy
 test: pi.py
+categories: stats, code

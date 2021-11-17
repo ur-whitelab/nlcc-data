@@ -1,0 +1,7 @@
+name: quantile
+language: python
+prompt: quantile.txt
+label: quantile.py
+context: numpy
+test: quantile.py
+categories: stats, code

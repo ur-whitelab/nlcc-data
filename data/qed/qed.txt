@@ -1,0 +1,4 @@
+def qed(smiles):
+    """
+    This function takes a SMILES string and returns the quantitative estimation of drug-likeness for the molecule.
+    """

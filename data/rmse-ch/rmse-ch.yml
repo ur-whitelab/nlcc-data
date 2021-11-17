@@ -1,0 +1,7 @@
+name: rmse-ch
+language: python
+prompt: rmse-ch.txt
+label: rmse-ch.py
+context: numpy
+test: rmse-ch.py
+categories: stats, code, ch

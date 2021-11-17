@@ -1,0 +1,7 @@
+name: matrix_factorial
+language: python
+prompt: matrix_factorial.txt
+label: matrix_factorial.py
+context: numpy
+test: matrix_factorial.py
+categories: numerics, code

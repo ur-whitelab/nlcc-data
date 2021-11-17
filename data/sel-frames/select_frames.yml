@@ -1,0 +1,7 @@
+name: select_frames
+language: python
+prompt: select_frames.txt
+label: select_frames.py
+context: mdtraj
+test: select_frames.py
+categories: md, code

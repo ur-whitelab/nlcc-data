@@ -1,0 +1,7 @@
+name: trap
+language: python
+prompt: trap.txt
+label: trap.py
+context: numpy
+test: trap.py
+categories: numerics, code

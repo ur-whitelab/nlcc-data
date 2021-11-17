@@ -4,3 +4,4 @@ prompt: smoke.txt
 label: smoke.py
 context: python
 test: smoke.py
+categories: disabled

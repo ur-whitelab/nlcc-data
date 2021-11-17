@@ -1,0 +1,7 @@
+name: derivative1d-ch
+language: python
+prompt: derivative1d-ch.txt
+label: derivative1d-ch.py
+context: numpy
+test: derivative1d-ch.py
+categories: numerics, code, ch
