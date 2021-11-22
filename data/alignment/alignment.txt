@@ -1,5 +1,4 @@
-def protein_alignment(pdb_file):
+def get_aligned_trj(trj, alignment_frame):
   """
-  1. This function loads a pdb
-  2. aligns the trajectory
-  3. Returns it
+  This function aligns trj to frame alignment_frame in trj
+  """
