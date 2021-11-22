@@ -1,0 +1,4 @@
+def get_aligned_trj(trj, alignment_frame):
+  """
+  This function aligns trj to frame alignment_frame in trj
+  """
