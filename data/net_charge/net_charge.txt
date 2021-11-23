@@ -1,4 +1,4 @@
 def net_charge(sequence):
     """
-    This function takes in an amino acid sequence and returns net charge of the sequence at pH =7
+    This function returns net charge of amino acid sequence
     """

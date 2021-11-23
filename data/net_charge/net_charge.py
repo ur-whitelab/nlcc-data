@@ -1,2 +1,2 @@
 
-result = True if net_charge("DSAVRCPQD")== -1.1 else False
+result = True if net_charge("DSAVRCPQD") == -1 else False
