@@ -1,0 +1,7 @@
+name: descriptors
+language: python
+prompt: descriptors.txt
+label: descriptors.py
+context: rdkit
+test: descriptors.py
+categories: cheminf, code
