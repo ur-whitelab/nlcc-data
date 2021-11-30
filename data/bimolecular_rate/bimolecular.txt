@@ -1,0 +1,4 @@
+def bimolecular_rate(k,A,B):
+   """
+   This function returns the rate of reaction given the rate constant k and concentrations of species A and B
+   """

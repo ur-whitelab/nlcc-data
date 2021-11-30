@@ -1,0 +1,7 @@
+name: bimolecular
+language: python
+prompt: bimolecular.txt
+label: bimolecular.py
+context: python
+test: bimolecular.py
+categories: code, genchem
