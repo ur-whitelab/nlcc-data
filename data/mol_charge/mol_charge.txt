@@ -1,0 +1,4 @@
+def net_charge(smiles):
+    """
+    This function returns net charge of given molecule
+    """

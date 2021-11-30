@@ -17,7 +17,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: whitead/nlcc
-        token: ${{ secrets.PAT }} # `GitHub_PAT` is a secret that contains your PAT
         path: nlcc
     - name: Install dependencies
       run: |

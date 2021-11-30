@@ -1,0 +1,7 @@
+name: net_charge
+language: python
+prompt: net_charge.txt
+label: net_charge.py
+context: python
+test: net_charge.py
+categories: bio, code

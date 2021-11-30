@@ -1,0 +1,4 @@
+def net_charge(sequence):
+    """
+    This function returns net charge of amino acid sequence
+    """

@@ -1,0 +1,7 @@
+def osmotic_pressure_concentration(Pi,T):
+   """
+   This function returns the concentration in mol/l given an osmotic pressure Pi and temperature T
+   T is in K
+   Pi is in atm
+   """
+   R = 0.08206 # l atm /K /mol

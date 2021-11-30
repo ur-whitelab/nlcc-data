@@ -1,0 +1,7 @@
+name: tanimoto
+language: python
+prompt: tanimoto.txt
+label: tanimoto.py
+context: rdkit
+test: tanimoto.py
+categories: cheminf, code

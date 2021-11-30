@@ -1,0 +1,7 @@
+name: freezing_depression
+language: python
+prompt: freezing_depression.txt
+label: freezing_depression.py
+context: python
+test: freezing_depression.py
+categories: genchem, code

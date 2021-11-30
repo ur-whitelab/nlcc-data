@@ -4,3 +4,4 @@ prompt: cubes.txt
 label: cubes.py
 context: python
 test: cubes.py
+categories: programming, code

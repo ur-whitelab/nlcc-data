@@ -1,0 +1,4 @@
+def solve_ode(fn, t, y0):
+    """
+    Solve an initial value problem for system of Ordinary Differential Equations using the Explicit Runge-Kutta method of order 5. t is a 1D vector and dy/dt=fn(t,y). Returns the values of the solution y at t.
+    """

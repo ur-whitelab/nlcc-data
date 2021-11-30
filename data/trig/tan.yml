@@ -1,0 +1,7 @@
+name: tan
+language: python
+prompt: tan.txt
+label: tan.py
+context: numpy
+test: tan.py
+categories: numerics, code

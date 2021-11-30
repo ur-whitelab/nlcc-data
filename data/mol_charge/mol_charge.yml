@@ -1,0 +1,7 @@
+name: mol_charge
+language: python
+prompt: mol_charge.txt
+label: mol_charge.py
+context: rdkit
+test: mol_charge.py
+categories: cheminf, code

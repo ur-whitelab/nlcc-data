@@ -1,0 +1,4 @@
+def scaffold(smiles):
+    """
+    Returns scaffold SMILES of given molecule
+    """

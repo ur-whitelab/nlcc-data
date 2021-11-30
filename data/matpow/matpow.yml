@@ -1,0 +1,7 @@
+name: matpow
+language: python
+prompt: matpow.txt
+label: matpow.py
+context: numpy
+test: matpow.py
+categories: numerics, code

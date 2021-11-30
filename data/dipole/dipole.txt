@@ -1,4 +1,7 @@
 def dipole_moment(coordinates, charges):
   """
-  This function returns the dipole moment for the molecule with positions given by coordinates
+  This function returns the dipole moment of a molecule
+
+  Coordinates is a numpy array of size Nx3
+  Charges is a numpy array of size N
   """

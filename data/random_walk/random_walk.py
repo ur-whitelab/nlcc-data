@@ -1,17 +1,23 @@
 import numpy as np
-# run 100 times
+import pylab as plt
+nsteps = 5000
+n_repeats = 250
 nlcc_trj_list = []
-for i in range(100):
-    nlcc_trj = random_walk(10000,1.0,2)
+for i in range(n_repeats):
+    nlcc_trj = random_walk(nsteps)
     nlcc_trj_list.append(nlcc_trj)
 nlcc_trj_list = np.array(nlcc_trj_list)
-#print("random walk shape:",nlcc_trj_list.shape)
-second_moment = np.sum(nlcc_trj_list*nlcc_trj_list,axis=-1)
-a_list = []
-for i in range(100):
-    a,b = np.polyfit(np.arange(10000),second_moment[i],1)
-    a_list.append(a)
-a = np.mean(np.array(a_list))
+
+msd = (nlcc_trj_list*nlcc_trj_list).mean(axis=0)
+
+a,b = np.polyfit(np.log(np.arange(1,nsteps)),np.log(msd[1:]),1)
+#plt.plot(np.arange(nsteps),msd)
+#plt.plot(np.arange(nsteps),np.exp(b+a*np.log(np.arange(nsteps))),linestyle='--',label='fit')
+#plt.legend()
+#plt.show()
 #print("a =",a)
-ideal = 2.0
+#print("b =",b)
+
+#ideal exponent for msd is 1
+ideal = 1.0
 result = True if np.abs((a-ideal)/ideal) < 0.1 else False

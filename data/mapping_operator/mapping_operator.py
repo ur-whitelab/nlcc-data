@@ -1,8 +1,9 @@
 import numpy as np
 import MDAnalysis as mda
+import os
 
 # read molecule
-u = mda.Universe('water.gro')
+u = mda.Universe(os.path.join(_FILE_DIR_, 'water.gro'))
 molecule = u.atoms
 # define atoms that belong to the a single bead
 beads_mappings = [['OW', 'HW1', 'HW2']]

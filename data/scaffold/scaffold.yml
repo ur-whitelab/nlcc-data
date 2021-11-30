@@ -1,0 +1,6 @@
+name: scaffold
+language: python
+prompt: scaffold.txt
+context: rdkit
+test: scaffold.py
+categories: cheminf, code

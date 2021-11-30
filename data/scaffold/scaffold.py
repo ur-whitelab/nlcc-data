@@ -1,0 +1,1 @@
+result = scaffold('C1([O-])C=CC=C1NCC[NH+]') == 'C1=CCC=C'

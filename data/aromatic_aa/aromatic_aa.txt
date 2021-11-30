@@ -1,0 +1,4 @@
+def aromatic_aa(sequence):
+    """
+    This function takes in an amino acid sequence and returns the number of aromatic residues there are
+    """

@@ -8,3 +8,6 @@ pybel
 rdkit-pypi
 mdanalysis
 mdtraj
+mendeleev
+sympy
+pyscf
