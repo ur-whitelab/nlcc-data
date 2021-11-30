@@ -4,3 +4,4 @@ prompt: pair_wise.txt
 label: pair_wise.py
 context: mdtraj
 test: pair_wise.py
+categories: bio, md, code

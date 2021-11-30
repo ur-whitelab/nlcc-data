@@ -4,3 +4,4 @@ prompt: mape.txt
 label: mape.py
 context: python
 test: mape.py
+categories: stats, code

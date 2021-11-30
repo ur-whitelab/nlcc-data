@@ -1,0 +1,4 @@
+def quantile(a, q):
+  """
+  This function computes the q-th quantile of the numpy array a. q can be a sequence of quantiles with values between 0 and 1 inclusive.
+  """

@@ -1,0 +1,7 @@
+name: angle
+language: python
+prompt: angle.txt
+label: angle.py
+context: numpy
+test: angle.py
+categories: numerics, code

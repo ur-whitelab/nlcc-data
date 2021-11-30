@@ -1,0 +1,5 @@
+def protein_surface_area(pdb_file):
+  """
+  1. This function loads a pdb
+  2. Calculates the Solven Accesible Surface Area (sasa) per residue
+  3. Returns it

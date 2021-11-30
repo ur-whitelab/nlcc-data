@@ -1,0 +1,7 @@
+name: element_mass
+language: python
+prompt: element_mass.txt
+label: element_mass.py
+context: python
+test: element_mass.py
+categories: genchem, code

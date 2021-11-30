@@ -1,0 +1,7 @@
+name: condiff_1d
+language: python
+prompt: condiff_1d.txt
+label: condiff_1d.py
+context: numpy
+test: condiff_1d.py
+categories: programming, code

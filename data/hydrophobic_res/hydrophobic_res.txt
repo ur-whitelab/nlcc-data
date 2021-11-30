@@ -1,7 +1,4 @@
-def get_hydrophobic_residues(filename):
+def get_hydrophobic_residues(pdb_filename):
   """
-  This function 
-  1. loads a pdb file
-  2. Checks if there are protein molecules
-  3. And returns all hydrophobic residues
+  Returns list of hydrophobic residues indices
   """

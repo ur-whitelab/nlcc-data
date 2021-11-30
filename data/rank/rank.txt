@@ -1,0 +1,4 @@
+def rank(M):
+    """
+    This function calculates the rank of matrix M using singular value decomposition.
+    """

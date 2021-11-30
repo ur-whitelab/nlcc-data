@@ -1,0 +1,4 @@
+def tanimoto_matrix(smiles_list):
+  """
+  Returns pairwise Tanimoto similarity matrix with ECFP4 fingerprints
+  """

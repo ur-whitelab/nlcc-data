@@ -1,0 +1,7 @@
+name: spectral_r
+language: python
+prompt: spectral_r.txt
+label: spectral_r.py
+context: numpy
+test: spectral_r.py
+categories: stats, code
