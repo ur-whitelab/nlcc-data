@@ -1,7 +1,6 @@
 name: lipinski_rule_of_five
 language: python
 prompt: lipinski.txt
-label: lipinski.py
 context: rdkit
 test: lipinski.py
 categories: cheminf, code

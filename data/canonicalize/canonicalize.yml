@@ -1,0 +1,6 @@
+name: canonicalize
+language: python
+prompt: canonicalize.txt
+context: rdkit
+test: canonicalize.py
+categories: cheminf, code

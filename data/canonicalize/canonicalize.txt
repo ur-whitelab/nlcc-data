@@ -1,0 +1,4 @@
+def canonical(smiles_list):
+    """
+    Returns list of canonical forms of given molecules
+    """
