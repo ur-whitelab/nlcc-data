@@ -1,7 +1,6 @@
 name: sequence
 language: python
 prompt: sequence.txt
-label: sequence.py
 context: numpy
 test: sequence.py
 categories: numerics, code
