@@ -1,0 +1,6 @@
+def freezing_depression(Kf,m):
+   """
+   This function returns the decrease in freezing point in Kelvin
+   The depression constant is Kf in K kg/mol and is greater than zero
+   Molality m is given in mol/kg
+   """
