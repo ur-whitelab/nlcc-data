@@ -3,3 +3,4 @@ language: !!str "python"
 prompt: !!str "LD.txt"
 context: !!str "numpy"
 test: !!str "LD.py"
+categories: code, sim
