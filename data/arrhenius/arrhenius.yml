@@ -4,3 +4,4 @@ prompt: arrhenius.txt
 label: arrhenius.py
 context: python
 test: arrhenius.py
+categories: code, genchem
