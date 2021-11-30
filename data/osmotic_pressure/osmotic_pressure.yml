@@ -1,0 +1,7 @@
+name: osmotic_pressure
+language: python
+prompt: osmotic_pressure.txt
+label: osmotic_pressure.py
+context: python
+test: osmotic_pressure.py
+categories: genchem, code
