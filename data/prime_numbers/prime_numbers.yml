@@ -1,0 +1,6 @@
+name: prime_numbers  
+language: python
+prompt: prime_numbers.txt
+label: prime_numbers.py
+context: python
+test: prime_numbers.py
