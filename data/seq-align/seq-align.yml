@@ -1,0 +1,7 @@
+name: seq-align
+language: python
+prompt: seq-align.txt
+label: seq-align.py
+context: biopython
+test: seq-align.py
+categories: code, bio

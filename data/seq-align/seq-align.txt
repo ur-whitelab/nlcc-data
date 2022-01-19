@@ -1,0 +1,4 @@
+def align(seq1, seq2):
+    '''
+    Align the two amino acid sequences with BLOSUM62 and return aligned sequences
+    '''
