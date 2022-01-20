@@ -1,0 +1,7 @@
+"""
+make a bar chart from hours_worked
+label x axis with days of the week
+add an x and y label
+save to bar.png
+"""
+hours_worked = [0,5,8,7,8.5,9,6]
