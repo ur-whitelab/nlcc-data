@@ -1,0 +1,15 @@
+"""
+Plot a filled contour plot from energy_data
+Plot contour lines on top
+Add a color bar 
+Save to contour.png
+"""
+
+def energy(x,y):
+    return 0.5*(x**2+np.sin(y*5))
+
+x = np.arange(-3,3,0.1)
+y = np.arange(-3,3,0.1)
+X, Y = np.meshgrid(x,y)
+
+energy_data = energy(X,Y)

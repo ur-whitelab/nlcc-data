@@ -1,0 +1,7 @@
+name: plot_contour
+language: python
+prompt: plot_contour.txt
+label: plot_contour.py
+context: numpy
+test: plot_contour.py
+categories: plot, human
