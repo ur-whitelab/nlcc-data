@@ -1,0 +1,6 @@
+"""
+Make a scatter plot where y weakly depends on x
+Compute the correlation coefficient
+Put r^2 in a text box at the top left
+Save to correlation.png
+"""

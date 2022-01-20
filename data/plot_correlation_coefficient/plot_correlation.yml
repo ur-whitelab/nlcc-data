@@ -1,0 +1,7 @@
+name: plot_correlation
+language: python
+prompt: plot_correlation.txt
+label: plot_correlation.py
+context: numpy
+test: plot_correlation.py
+categories: plot, human
