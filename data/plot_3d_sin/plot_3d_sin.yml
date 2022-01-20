@@ -1,0 +1,7 @@
+name: plot_3d_sin
+language: python
+prompt: plot_3d_sin.txt
+label: plot_3d_sin.py
+context: numpy
+test: plot_3d_sin.py
+categories: plot, human
