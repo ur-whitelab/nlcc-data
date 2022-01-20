@@ -1,0 +1,6 @@
+"""
+First plot y = x 
+Now plot y = sin(x) on a second y axis
+Make the x range 0 to 4 pi
+Save to dual.png
+"""
