@@ -1,0 +1,10 @@
+"""
+Make a scatter plot with random data
+Color the points by distance from the origin
+Scale the point size by y value
+Add a color bar
+Make it horizontal
+Use the color scheme from red to blue
+Make it a square aspect ratio
+save to points.png
+"""

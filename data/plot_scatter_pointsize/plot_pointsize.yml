@@ -1,0 +1,7 @@
+name: plot_pointsize
+language: python
+prompt: plot_pointsize.txt
+label: plot_pointsize.py
+context: numpy
+test: plot_pointsize.py
+categories: plot, human
