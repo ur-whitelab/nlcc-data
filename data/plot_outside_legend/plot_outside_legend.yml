@@ -1,0 +1,7 @@
+name: plot_outside_legend
+language: python
+prompt: plot_outside_legend.txt
+label: plot_outside_legend.py
+context: numpy
+test: plot_outside_legend.py
+categories: plot, human

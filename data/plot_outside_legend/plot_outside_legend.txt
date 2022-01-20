@@ -1,0 +1,7 @@
+"""
+Plot gaussian random noise with a label gaussian
+Add a legend
+Put the legend outside of the plot
+Make sure everything fits in the plot
+Save to legend.png
+"""
