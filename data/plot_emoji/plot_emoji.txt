@@ -1,0 +1,5 @@
+"""
+Make a points plot of a sin wave 
+Use a smiley face emoji unicode as marker
+Save to emoji.png
+"""

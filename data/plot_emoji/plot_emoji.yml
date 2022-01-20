@@ -1,0 +1,7 @@
+name: plot_emoji
+language: python
+prompt: plot_emoji.txt
+label: plot_emoji.py
+context: numpy
+test: plot_emoji.py
+categories: plot, human
