@@ -12,3 +12,4 @@ mendeleev
 sympy
 pyscf
 papermill
+jupyter
