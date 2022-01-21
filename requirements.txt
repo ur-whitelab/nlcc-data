@@ -11,3 +11,4 @@ mdtraj
 mendeleev
 sympy
 pyscf
+papermill
