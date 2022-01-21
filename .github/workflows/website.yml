@@ -1,0 +1,39 @@
+on:
+  # Trigger the workflow on push or pull request
+  push:
+    branches:
+      - main
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python "3.8"
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Install nlcc
+      uses: actions/checkout@v2
+      with:
+        repository: whitead/nlcc
+        path: nlcc
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Evaluate
+      env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        mkdir -p dist/human
+        nlcc-eval data/**/*.yml --n 1 > index.md
+        nlcc-human --n 1 data/**/*.yml --out-dir /var/tmp >> index.md
+        pandoc -f markdown -i index.md -s -o dist/index.html --metadata title="nlcc report"
+        for f in /var/tmp/*yml; do papermill -f $f human_eval_template.ipynb "${f%.yml}".ipynb; done;
+        for f in /var/tmp/*ipynb; jupyter-nbconvert --to=html --no-input $f --output-dir=dist/human; done;
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist
