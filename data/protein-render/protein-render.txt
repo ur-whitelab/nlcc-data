@@ -1,0 +1,9 @@
+def protein_render(pdb):
+    '''
+    Renders a picture of given protein with nglview
+
+    1. import packages
+    2. Download PDB
+    3. Render it
+    4. Returns image filename
+    '''

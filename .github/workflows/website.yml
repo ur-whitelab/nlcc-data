@@ -30,7 +30,7 @@ jobs:
         mkdir -p dist/human
         nlcc-eval data/**/*.yml --n 5 > index.md
         nlcc-human --n 3 data/**/*.yml --out-dir /var/tmp >> index.md
-        pandoc -s -f markdown -i index.md -s -o dist/index.html --metadata title="nlcc report"
+        pandoc -s --toc -f markdown -i index.md -o dist/index.html --metadata title="nlcc report"
         for f in /var/tmp/*yml; do papermill -f $f human_eval_template.ipynb "${f%.yml}".ipynb; done;
         for f in /var/tmp/*ipynb; do jupyter-nbconvert --to=html --no-input $f --output-dir=dist/human; done;
     - name: Deploy

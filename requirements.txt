@@ -13,3 +13,5 @@ sympy
 pyscf
 papermill
 jupyter
+nglview
+beautifulsoup4
