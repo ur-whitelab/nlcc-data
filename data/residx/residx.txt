@@ -1,0 +1,4 @@
+def residx(pdb,str):
+  """
+  This function returns the indices of atoms of residue str in frame pdb  
+  """
