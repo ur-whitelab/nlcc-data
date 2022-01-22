@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>result_plot_contour_d22Jan2022_T0.2_r1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>result_protein-render_d22Jan2022_T0.2_r0</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<h1 id="plot_contour-1">plot_contour 1<a class="anchor-link" href="#plot_contour-1">&#182;</a></h1><h2 id="Query">Query<a class="anchor-link" href="#Query">&#182;</a></h2>
+<h1 id="protein-render-0">protein-render 0<a class="anchor-link" href="#protein-render-0">&#182;</a></h1><h2 id="Query">Query<a class="anchor-link" href="#Query">&#182;</a></h2>
 </div>
 
 </div>
@@ -14673,32 +14673,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .vg { color: #19177C } /* Name.Variable.Global */
 .output_html .vi { color: #19177C } /* Name.Variable.Instance */
 .output_html .vm { color: #19177C } /* Name.Variable.Magic */
-.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Create matrix of ones</span>
+<span class="sd">Print version string</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span><span class="p">)</span>
 <span class="c1"># end</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Plot a filled contour plot from energy_data</span>
-<span class="sd">Plot contour lines on top</span>
-<span class="sd">Add a color bar </span>
-<span class="sd">Save to contour.png</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">protein_render</span><span class="p">(</span><span class="n">pdb</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Renders a picture of given protein with nglview</span>
 
-<span class="k">def</span> <span class="nf">energy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="kp">sin</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="mi">5</span><span class="p">))</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-
-<span class="n">energy_data</span> <span class="o">=</span> <span class="n">energy</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+<span class="sd">    1. import packages</span>
+<span class="sd">    2. Download PDB</span>
+<span class="sd">    3. Renders it</span>
+<span class="sd">    4. Displays with ipython</span>
+<span class="sd">    &#39;&#39;&#39;</span>
 </pre></div>
 
 </div>
@@ -14803,36 +14794,40 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .vg { color: #19177C } /* Name.Variable.Global */
 .output_html .vi { color: #19177C } /* Name.Variable.Instance */
 .output_html .vm { color: #19177C } /* Name.Variable.Magic */
-.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Create matrix of ones</span>
+<span class="sd">Print version string</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span><span class="p">)</span>
 <span class="c1"># end</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Plot a filled contour plot from energy_data</span>
-<span class="sd">Plot contour lines on top</span>
-<span class="sd">Add a color bar </span>
-<span class="sd">Save to contour.png</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">protein_render</span><span class="p">(</span><span class="n">pdb</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Renders a picture of given protein with nglview</span>
 
-<span class="k">def</span> <span class="nf">energy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="kp">sin</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="mi">5</span><span class="p">))</span>
+<span class="sd">    1. import packages</span>
+<span class="sd">    2. Download PDB</span>
+<span class="sd">    3. Renders it</span>
+<span class="sd">    4. Displays with ipython</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
+    <span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
+    <span class="kn">import</span> <span class="nn">mdtraj.html</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="c1"># Download PDB</span>
+    <span class="n">pdb</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">load_pdb</span><span class="p">(</span><span class="s1">&#39;http://www.rcsb.org/pdb/files/</span><span class="si">{}</span><span class="s1">.pdb&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pdb</span><span class="p">))</span>
 
-<span class="n">energy_data</span> <span class="o">=</span> <span class="n">energy</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+    <span class="c1"># Render it</span>
+    <span class="n">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_mdtraj</span><span class="p">(</span><span class="n">pdb</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">clear_representations</span><span class="p">()</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">add_ball_and_stick</span><span class="p">()</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">add_licorice</span><span class="p">()</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">energy_data</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;contour.png&quot;</span><span class="p">)</span>
+    <span class="c1"># Display with ipython</span>
+    <span class="n">mdtraj</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">enable_notebook</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">view</span>
 </pre></div>
 
 </div>
@@ -14853,14 +14848,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <div class="jp-OutputArea-child">
 
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
->
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1.9.7
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -14879,7 +14870,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<h2 id="Evaluate">Evaluate<a class="anchor-link" href="#Evaluate">&#182;</a></h2><p>Go to <a href="https://docs.google.com/forms/d/e/1FAIpQLScgNNwGoI-XsyKxckeVASHNxM3MQp-5hj6kSYVqgzBTMRNJFA/viewform?usp=pp_url&entry.977561167=result_plot_contour_d22Jan2022_T0.2_r1" target="_blank">Google Form</a></p>
+<h2 id="Evaluate">Evaluate<a class="anchor-link" href="#Evaluate">&#182;</a></h2><p>Go to <a href="https://docs.google.com/forms/d/e/1FAIpQLScgNNwGoI-XsyKxckeVASHNxM3MQp-5hj6kSYVqgzBTMRNJFA/viewform?usp=pp_url&entry.977561167=result_protein-render_d22Jan2022_T0.2_r0" target="_blank">Google Form</a></p>
 
 </div>
 
