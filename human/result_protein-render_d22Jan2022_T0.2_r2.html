@@ -3,7 +3,34 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>result_protein-render_d22Jan2022_T0.2_r2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>result_protein-render_d22Jan2022_T0.2_r2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        
+        var widgetRendererSrc = 'https://unpkg.com/@jupyter-js-widgets@*/dist/embed.js';
+        
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
 
 
 
@@ -14681,15 +14708,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span><span class="p">)</span>
 <span class="c1"># end</span>
 
-<span class="k">def</span> <span class="nf">protein_render</span><span class="p">(</span><span class="n">pdb</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Renders a picture of given protein with nglview</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Render a picture of lysozyme protein with nglview</span>
 
-<span class="sd">    1. import packages</span>
-<span class="sd">    2. Download PDB</span>
-<span class="sd">    3. Renders it</span>
-<span class="sd">    4. Displays with ipython</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">1. import packages</span>
+<span class="sd">2. Download 1GWD protein</span>
+<span class="sd">3. Render it</span>
+<span class="sd">4. Embed in jupyter notebook</span>
+<span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
 
 </div>
@@ -14802,63 +14828,132 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span><span class="p">)</span>
 <span class="c1"># end</span>
 
-<span class="k">def</span> <span class="nf">protein_render</span><span class="p">(</span><span class="n">pdb</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Renders a picture of given protein with nglview</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Render a picture of lysozyme protein with nglview</span>
 
-<span class="sd">    1. import packages</span>
-<span class="sd">    2. Download PDB</span>
-<span class="sd">    3. Renders it</span>
-<span class="sd">    4. Displays with ipython</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
-    <span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
-    <span class="kn">import</span> <span class="nn">pytraj</span> <span class="k">as</span> <span class="nn">pt</span>
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-    <span class="kn">import</span> <span class="nn">os</span>
+<span class="sd">1. import packages</span>
+<span class="sd">2. Download 1GWD protein</span>
+<span class="sd">3. Render it</span>
+<span class="sd">4. Embed in jupyter notebook</span>
+<span class="sd">&#39;&#39;&#39;</span>
 
-    <span class="c1"># 1. Download PDB</span>
-    <span class="c1"># pdb = &#39;1r69&#39;</span>
-    <span class="c1"># pdb = &#39;1occ&#39;</span>
-    <span class="c1"># pdb = &#39;4k5y&#39;</span>
-    <span class="c1"># pdb = &#39;1be9&#39;</span>
-    <span class="c1"># pdb = &#39;1bpx&#39;</span>
-    <span class="c1"># pdb = &#39;1ri5&#39;</span>
-    <span class="c1"># pdb = &#39;1a6i&#39;</span>
-    <span class="c1"># pdb = &#39;1be9&#39;</span>
-    <span class="c1"># pdb = &#39;1bma&#39;</span>
-    <span class="c1"># pdb = &#39;1bzf&#39;</span>
-    <span class="c1"># pdb = &#39;1bzj&#39;</span>
-    <span class="c1"># pdb = &#39;1c09&#39;</span>
-    <span class="c1"># pdb = &#39;1c1b&#39;</span>
-    <span class="c1"># pdb = &#39;1c1f&#39;</span>
-    <span class="c1"># pdb = &#39;1c2r&#39;</span>
-    <span class="c1"># pdb = &#39;1c2u&#39;</span>
-    <span class="c1"># pdb = &#39;1c3k&#39;</span>
-    <span class="c1"># pdb = &#39;1c3l&#39;</span>
-    <span class="c1"># pdb = &#39;1c3m&#39;</span>
-    <span class="c1"># pdb = &#39;1c3n&#39;</span>
-    <span class="c1"># pdb = &#39;1c3o&#39;</span>
-    <span class="c1"># pdb = &#39;1c3p&#39;</span>
-    <span class="c1"># pdb = &#39;1c3q&#39;</span>
-    <span class="c1"># pdb = &#39;1c3r&#39;</span>
-    <span class="c1"># pdb = &#39;1c3s&#39;</span>
-    <span class="c1"># pdb = &#39;1c3t&#39;</span>
-    <span class="c1"># pdb = &#39;1c3u&#39;</span>
-    <span class="c1"># pdb = &#39;1c3v&#39;</span>
-    <span class="c1"># pdb = &#39;1c3w&#39;</span>
-    <span class="c1"># pdb = &#39;1c3x&#39;</span>
-    <span class="c1"># pdb = &#39;1c3y&#39;</span>
-    <span class="c1"># pdb = &#39;1c3z&#39;</span>
-    <span class="c1"># pdb = &#39;1c41&#39;</span>
-    <span class="c1"># pdb = &#39;1c42&#39;</span>
-    <span class="c1"># pdb = &#39;1c43&#39;</span>
-    <span class="c1"># pdb = &#39;1c44&#39;</span>
-    <span class="c1"># pdb = &#39;1c45&#39;</span>
-    <span class="c1"># pdb = &#39;1c46&#39;</span>
-    <span class="c1"># pdb = &#39;1c47&#39;</span>
-    <span class="c1">#</span>
+<span class="c1"># import packages</span>
+<span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
+
+<span class="c1"># Download 1GWD protein</span>
+<span class="c1"># </span>
+<span class="c1"># [1GWD](https://www.rcsb.org/structure/1GWD) is a lysozyme (EC 3.2.1.17)</span>
+<span class="c1"># </span>
+<span class="c1"># [Protein Data Bank (PDB)](https://www.rcsb.org/) is an open-access database that provides comprehensive, high-quality protein data.</span>
+<span class="c1"># </span>
+<span class="c1"># [Protein Data Bank download](https://www.rcsb.org/pages/general/download_options)</span>
+<span class="c1"># </span>
+<span class="c1"># Download the file `1GWD.pdb` and save it to your computer.</span>
+<span class="c1"># </span>
+<span class="c1"># You can also download the file directly from the PDB website by clicking the link below:</span>
+<span class="c1"># </span>
+<span class="c1"># [1GWD.pdb](https://files.rcsb.org/view/1GWD.pdb)</span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1">#</span>
 </pre></div>
 
 </div>
@@ -14883,6 +14978,24 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <pre>1.9.7
 </pre>
 </div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+
+
+
+
+
+<div id="41baf385-0d0c-4667-a3a3-9ca0111cc609" class="jupyter-widgets jp-OutputArea-output ">
+<script type="text/javascript">
+var element = document.getElementById('41baf385-0d0c-4667-a3a3-9ca0111cc609');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "29ceec6e63274472a3b16d1d83eed926", "version_major": 2, "version_minor": 0}
+</script>
+</div>
+
 </div>
 
 </div>
@@ -14920,6 +15033,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"29ceec6e63274472a3b16d1d83eed926": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_3a8a269202a84001b25ef83fd9a035c2"}}, "3a8a269202a84001b25ef83fd9a035c2": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
+</script>
 
 
 </html>
