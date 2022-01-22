@@ -1,7 +1,5 @@
 name: protein-render
 language: python
 prompt: protein-render.txt
-label: protein-render.py
 context: mdtraj
-test: protein-render.py
-categories: code, bio
+categories: human, bio
