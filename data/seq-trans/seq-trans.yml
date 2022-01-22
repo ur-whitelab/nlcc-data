@@ -1,0 +1,7 @@
+name: seq-trans
+language: python
+prompt: seq-trans.txt
+label: seq-trans.py
+context: biopython
+test: seq-trans.py
+categories: bio, code
