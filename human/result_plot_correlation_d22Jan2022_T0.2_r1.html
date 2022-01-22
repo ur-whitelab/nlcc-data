@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>result_plot_sin_polar_d21Jan2022_T0.2_r0</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>result_plot_correlation_d22Jan2022_T0.2_r1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<h1 id="plot_sin_polar-0">plot_sin_polar 0<a class="anchor-link" href="#plot_sin_polar-0">&#182;</a></h1><h2 id="Query">Query<a class="anchor-link" href="#Query">&#182;</a></h2>
+<h1 id="plot_correlation-1">plot_correlation 1<a class="anchor-link" href="#plot_correlation-1">&#182;</a></h1><h2 id="Query">Query<a class="anchor-link" href="#Query">&#182;</a></h2>
 </div>
 
 </div>
@@ -14684,7 +14684,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="c1"># end</span>
 
-<span class="c1"># plot a sin wave in polar coordinates from 0 to 4 pi</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Make a scatter plot where y weakly depends on x</span>
+<span class="sd">Compute the correlation coefficient</span>
+<span class="sd">Put r^2 in a text box at the top left</span>
+<span class="sd">Save to correlation.png</span>
+<span class="sd">&quot;&quot;&quot;</span>
 </pre></div>
 
 </div>
@@ -14800,16 +14805,17 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="c1"># end</span>
 
-<span class="c1"># plot a sin wave in polar coordinates from 0 to 4 pi</span>
-<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;polar&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_rmax</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;A line plot on a polar axis&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;polar.png&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Make a scatter plot where y weakly depends on x</span>
+<span class="sd">Compute the correlation coefficient</span>
+<span class="sd">Put r^2 in a text box at the top left</span>
+<span class="sd">Save to correlation.png</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;r^2 = </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="kp">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;correlation.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14820,7 +14826,29 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXQAAAD4CAYAAAD8Zh1EAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjUuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/YYfK9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAdW0lEQVR4nO3df4xc5X3v8fc3dkgdbooRNlKztjHcdVwciHC6AUcoN8GQ8iOSjRIHmyiCXlmYplDdOr0ER7niRjRRzCXX/aGgttwaxW3Er3IjsxIGS8EEIis4LDI1wS3FxaTeJbq4LkaJcAHD9/4xu2Z2mNk5M3N+PM9zPi8JsTNzvPucc2a+85zv832eY+6OiIjE731VN0BERPKhgC4ikggFdBGRRCigi4gkQgFdRCQRs6v6w/PmzfPFixdX9edFRKL09NNP/5u7z2/3WmUBffHixYyNjVX150VEomRmv+j0mlIuIiKJUEAXEUmEArqISCIU0EVEEqGALiKSiK4B3czuMrNXzOznHV43M/sLMztgZvvM7OP5N1NEirR97wQXbt7FmZse4sLNu9i+d6LqJkkfsvTQvw9cNsPrlwNLJv/bAPzl4M0SkbJs3zvB13/4LBNHj+HAxNFjfP2HzyqoR6hrQHf3J4B/n2GT1cDfesOTwFwz+628Gigixbp95/Mce+vtac8de+ttbt/5fEUtkn7lMbFoCDjU9Hh88rlftm5oZhto9OJZtGhRDn9autm+d4Lbdz7Py0eP8eG5c7jp0qVcuXyo6mZJQF4+eqyn5yVcpQ6Kuvud7j7i7iPz57eduSo50qW0ZPHhuXN6el7ClUdAnwAWNj1eMPmcVEyX0pLFTZcuZc77Z017bs77Z3HTpUsrapH0K4+APgpcM1ntsgJ4zd3fk26R8ulSWrK4cvkQ3/n8uQzNnYMBQ3Pn8J3Pn6vUXIS65tDN7B7gM8A8MxsH/ifwfgB3/ytgB3AFcAB4HfivRTVWevPhuXOYaBO8dSktra5cPqQAnoCuAd3dr+7yugM35NYiyc1Nly7l6z98dlraRZfSUhd1LAiobPlcKd7Um7dub2qRqYKAqc7MVEEAkPT7XwE9caFcStextyTVmakgIOX3nQK6FK6uvSWpTl0LArQ4lxRO5ZNStrrW1iugS+Gy9pa0QJTkpa619Uq5SOGylE+2S8tsvO8Z/ui+ZxgKMOeuMYGw1bUgQAFdCpelfLJdWsYn/x9azl1jAnEIpSCgTEq55Oj666/n5JNPZteuXdOe37JlC8uWLeNjH/sYF198Mb/4Rcebdmf2xhtvsHbtWoaHh7ngggt46aWX2m73yCOPsHTpUoaHh9m8efOJ5w8ePMgFF1zA8PAwa9eu5c033xy4TZ1kmYnYbbAqpJy7xgQkVAroA3B33nnnHQC+9a1vcfToUfbs2cMNN9zAvn37Tmy3fPlyxsbG2LdvH2vWrOFrX/vawH9769atnHrqqRw4cICNGzdy8803v2ebt99+mxtuuIGHH36Y/fv3c88997B//34Abr75ZjZu3MiBAwc49dRT2bp168BtmsmVy4fYvWklBzd/jt2bVr6n55RlsCrvCoV+c/Z1raCQ8Cmg9+ill15i6dKlXHPNNZxzzjkcOnSIbdu28dxzz3H33XdzzjnnMDo6ynXXXcehQ41VhS+66CI++MEPArBixQrGx8cHbseDDz7ItddeC8CaNWt49NFHaUzafdfPfvYzhoeHOeusszjppJNYt24dDz74IO7Orl27WLNmDQDXXnst27dvH7hNg2g3iNUqzwqFrCtRtgv6da2gkPAph96HF154gW3btrFixQqgERCngivAkiVL2LNnT9t/u3XrVi6//PK2r33qU5/iV7/61Xue/+53v8sll1wy7bmJiQkWLmwscjl79mxOOeUUjhw5wrx589puA7BgwQL27NnDkSNHmDt3LrNnzz7x/MREtRUlzYNYE0ePYbybQ4f8KxSyTDzplCv/wu8M8X+fntCSChIcBfQ+nHHGGSeCeS9+8IMfMDY2xuOPP9729Z/85CeDNi1qzYNYRVeRZEmbdAr6j/3TYb7z+XNrV0Eh4VNA78PJJ5/c87/50Y9+xLe//W0ef/xxPvCBD7Tdppce+tDQEIcOHWLBggUcP36c1157jdNOO63tNlPGx8cZGhritNNO4+jRoxw/fpzZs2efeD4kRVcoZCmlnCno17GCQsKngF6CvXv3cv311/PII49w+umnd9yulx76qlWr2LZtG5/85Cd54IEHWLlyJWY2bZtPfOITvPDCCxw8eJChoSHuvfde7r77bsyMiy66iAceeIB169axbds2Vq9e3ff+xShLKaWWH5bYaFC0BDfddBO//vWv+eIXv8h5553HqlWrBv6d69ev58iRIwwPD7Nly5YT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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
@@ -14834,7 +14862,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<h2 id="Evaluate">Evaluate<a class="anchor-link" href="#Evaluate">&#182;</a></h2><p>Go to <a href="https://docs.google.com/forms/d/e/1FAIpQLScgNNwGoI-XsyKxckeVASHNxM3MQp-5hj6kSYVqgzBTMRNJFA/viewform?usp=pp_url&entry.977561167=result_plot_sin_polar_d21Jan2022_T0.2_r0" target="_blank">Google Form</a></p>
+<h2 id="Evaluate">Evaluate<a class="anchor-link" href="#Evaluate">&#182;</a></h2><p>Go to <a href="https://docs.google.com/forms/d/e/1FAIpQLScgNNwGoI-XsyKxckeVASHNxM3MQp-5hj6kSYVqgzBTMRNJFA/viewform?usp=pp_url&entry.977561167=result_plot_correlation_d22Jan2022_T0.2_r1" target="_blank">Google Form</a></p>
 
 </div>
 
