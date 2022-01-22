@@ -1,9 +1,8 @@
-def protein_render(pdb):
-    '''
-    Renders a picture of given protein with nglview
+'''
+Render a picture of lysozyme protein with nglview
 
-    1. import packages
-    2. Download PDB
-    3. Renders it
-    4. Displays with ipython
-    '''
+1. import packages
+2. Download 1GWD protein
+3. Render it
+4. Embed in jupyter notebook
+'''
