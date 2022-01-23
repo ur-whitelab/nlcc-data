@@ -14839,32 +14839,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="c1"># import packages</span>
 <span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
+<span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
 
 <span class="c1"># Download 1GWD protein</span>
-<span class="c1"># </span>
-<span class="c1"># [1GWD](https://www.rcsb.org/structure/1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/download/downloadFile.do?fileFormat=pdb&amp;compression=NO&amp;structureId=1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://files.rcsb.org/download/1GWD.pdb)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://files.rcsb.org/download/1GWD.cif)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=NO&amp;structureId=1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=cif&amp;compression=NO&amp;structureId=1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=xml&amp;compression=NO&amp;structureId=1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=fasta&amp;compression=NO&amp;structureId=1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=pdbML&amp;compression=NO&amp;structureId=1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=cif&amp;compression=NO&amp;structureId=1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=mmtf&amp;compression=NO&amp;structureId=1GWD)</span>
-<span class="c1"># </span>
-<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=mmCIF&amp;compression=NO&amp;structureId=1GWD</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;http://www.rcsb.org/pdb/files/1GWD.pdb&#39;</span><span class="p">)</span>
+
+<span class="c1"># Render it</span>
+<span class="n">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_mdtraj</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">view</span><span class="o">.</span><span class="n">add_ball_and_stick</span><span class="p">()</span>
+<span class="n">view</span>
+
+<span class="c1"># Embed in jupyter notebook</span>
+<span class="n">view</span><span class="o">.</span><span class="n">_display_image</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -14898,15 +14884,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 
-<div id="410298ee-ac67-4d2c-bd49-53622d4d9c3d" class="jupyter-widgets jp-OutputArea-output ">
+<div id="42dab68f-3bd1-47d1-bef6-f86efb6e1165" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('410298ee-ac67-4d2c-bd49-53622d4d9c3d');
+var element = document.getElementById('42dab68f-3bd1-47d1-bef6-f86efb6e1165');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ea52b80ac2f149b0957755804ba90e03", "version_major": 2, "version_minor": 0}
+{"model_id": "b594bdbd367f4c97a2ba2d891ca701ce", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
+</div>
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>No such file: http://www.rcsb.org/pdb/files/1GWD.pdb
+</pre>
+</div>
 </div>
 
 </div>
@@ -14946,7 +14940,7 @@ var element = document.getElementById('410298ee-ac67-4d2c-bd49-53622d4d9c3d');
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"359d1f817ede4961a140db1a9d5fa3d9": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ea52b80ac2f149b0957755804ba90e03": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_359d1f817ede4961a140db1a9d5fa3d9"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"b594bdbd367f4c97a2ba2d891ca701ce": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_fd818b3e19594a809a0c6e248941ee5e"}}, "fd818b3e19594a809a0c6e248941ee5e": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 

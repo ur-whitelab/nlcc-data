@@ -14807,10 +14807,34 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">This function performs metropolis monte carlo sampling of a harmonic potential at temperature T</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="c1"># Initialize the system</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
-    
+    <span class="c1"># initialize position</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># initialize energy</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+    <span class="c1"># initialize energy array</span>
+    <span class="n">Es</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize position array</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># loop over steps</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
+        <span class="c1"># calculate energy</span>
+        <span class="n">E</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+        <span class="c1"># calculate new position</span>
+        <span class="n">x_new</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># calculate new energy</span>
+        <span class="n">E_new</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x_new</span><span class="o">*</span><span class="n">x_new</span>
+        <span class="c1"># calculate transition probability</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">E_new</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">T</span><span class="p">)</span>
+        <span class="c1"># accept transition?</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">uniform</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x_new</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="n">E_new</span>
+        <span class="c1"># store energy</span>
+        <span class="n">Es</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span>
+        <span class="c1"># store position</span>
+        <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="c1"># return arrays</span>
+    <span class="k">return</span> <span class="n">xs</span><span class="p">,</span> <span class="n">Es</span>
 </pre></div>
 
 </div>
