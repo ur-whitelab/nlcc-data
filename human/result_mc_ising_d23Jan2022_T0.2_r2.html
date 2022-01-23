@@ -14808,30 +14808,31 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="c1"># initialize random spin configuration</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">)</span>
-    <span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_sites</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="kp">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
     <span class="c1"># initialize energy and magnetization</span>
     <span class="n">energy</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="c1"># initialize array to store energy and magnetization at each step</span>
-    <span class="n">energy_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">mag_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="c1"># perform monte carlo sampling</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
-        <span class="c1"># choose random spin to flip</span>
-        <span class="n">site</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">)</span>
+    <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">sum</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="c1"># initialize array of energies</span>
+    <span class="n">energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetizations</span>
+    <span class="n">magnetizations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># loop over steps</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
+        <span class="c1"># choose random site</span>
+        <span class="n">site</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="n">n_sites</span><span class="p">)</span>
         <span class="c1"># calculate energy change</span>
-        <span class="n">dE</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="n">site</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">J</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="p">[(</span><span class="n">site</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[(</span><span class="n">site</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">])</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
-        <span class="c1"># accept or reject step using metropolis algorithm</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dE</span><span class="o">/</span><span class="n">T</span><span class="p">):</span>
-            <span class="n">s</span><span class="p">[</span><span class="n">site</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">s</span><span class="p">[</span><span class="n">site</span><span class="p">]</span>
-            <span class="n">energy</span> <span class="o">+=</span> <span class="n">dE</span>
-            <span class="n">mag</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="n">site</span><span class="p">]</span>
-        <span class="c1"># store energy and magnetization at each step</span>
-        <span class="n">energy_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">energy</span>
-        <span class="n">mag_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mag</span>
-    <span class="c1"># return energy and magnetization at each step</span>
-    <span class="k">return</span> <span class="n">energy_array</span><span class="p">,</span> <span class="n">mag_array</span>
+        <span class="n">energy_change</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">J</span><span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="n">site</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">config</span><span class="p">[(</span><span class="n">site</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">]</span> <span class="o">+</span> <span class="n">config</span><span class="p">[(</span><span class="n">site</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">])</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="n">site</span><span class="p">]</span>
+        <span class="c1"># accept or reject with Metropolis probability</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="n">energy_change</span><span class="o">/</span><span class="n">T</span><span class="p">):</span>
+            <span class="c1"># accept</span>
+            <span class="n">config</span><span class="p">[</span><span class="n">site</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">energy</span> <span class="o">+=</span> <span class="n">energy_change</span>
+            <span class="n">mag</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="n">site</span><span class="p">]</span>
+        <span class="c1"># store energy and magnetization</span>
+        <span class="n">energies</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="n">energy</span>
+        <span class="n">magnetizations</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="n">mag</span>
+    <span class="c1"># return configuration, energy, and magnetization</span>
+    <span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="n">energies</span><span class="p">,</span> <span class="n">magnetizations</span>
 </pre></div>
 
 </div>
