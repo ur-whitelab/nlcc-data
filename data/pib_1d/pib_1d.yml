@@ -4,4 +4,4 @@ prompt: pib_1d.txt
 label: pib_1d.py
 context: python
 test: pib_1d.py
-categories: quantum, code
+categories: qm, code
