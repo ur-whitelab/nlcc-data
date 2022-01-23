@@ -5,18 +5,13 @@ import matplotlib.pyplot as plt
 L = 10     # length of the box
 m = 1      # masss of the particle
 n = 10     # quantum number 
-h = 1      # planck constant
+hbar = 1      # planck constant
 
 # energy
-e_n = (n**2*h**2)/(8*m*L**2)
+e_n = ((n**2)*(hbar**2)*(np.pi**2))/(2*m*L**2)
 print("energy =", e_n)
 
-# wave function
-x  = np.linspace(0, L, 50, endpoint=True)
-w_n = np.sqrt(2/L) * np.sin(n*np.pi*x/L)
-
-
-e_n_codex = pib_energy(n,m,L,h)  
+e_n_codex = particle_in_box(n,m,L)  
 print("energy from codex =", e_n_codex)
 
 

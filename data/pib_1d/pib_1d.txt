@@ -1,5 +1,4 @@
-def pib_energy(n,m,L,h):
+def particle_in_box(n,m,L,hbar=1):
    """
-   This function returns the energy for a particle in a box model at level n with mass m and box length L.
-   h is the value for planck's constant.
+   This function returns the energy for a quantum particle in a 1d box
    """
