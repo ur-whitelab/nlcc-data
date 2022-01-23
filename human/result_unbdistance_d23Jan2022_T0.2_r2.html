@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>result_mc_ising_d23Jan2022_T0.2_r2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>result_unbdistance_d23Jan2022_T0.2_r2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<h1 id="mc_ising-2">mc_ising 2<a class="anchor-link" href="#mc_ising-2">&#182;</a></h1><h2 id="Query">Query<a class="anchor-link" href="#Query">&#182;</a></h2>
+<h1 id="unbdistance-2">unbdistance 2<a class="anchor-link" href="#unbdistance-2">&#182;</a></h1><h2 id="Query">Query<a class="anchor-link" href="#Query">&#182;</a></h2>
 </div>
 
 </div>
@@ -14673,21 +14673,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .vg { color: #19177C } /* Name.Variable.Global */
 .output_html .vi { color: #19177C } /* Name.Variable.Instance */
 .output_html .vm { color: #19177C } /* Name.Variable.Magic */
-.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Create matrix of ones</span>
+<span class="sd">Print version string</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span><span class="p">)</span>
 <span class="c1"># end</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This function performs metropolis monte carlo sampling of the 1d ising model at temperature T</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">unbdistance</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span><span class="n">lig_str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function returns a list of distances between center of mass of </span>
+<span class="sd">    protein and center of mass of lig_str in every frame of trajectory</span>
+<span class="sd">    traj</span>
+
+<span class="sd">    traj is an mdtraj trajectory object</span>
+<span class="sd">    lig_str is a string with the residue name of the ligand</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 </pre></div>
 
 </div>
@@ -14792,46 +14794,32 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .vg { color: #19177C } /* Name.Variable.Global */
 .output_html .vi { color: #19177C } /* Name.Variable.Instance */
 .output_html .vm { color: #19177C } /* Name.Variable.Magic */
-.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Create matrix of ones</span>
+<span class="sd">Print version string</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span><span class="p">)</span>
 <span class="c1"># end</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This function performs metropolis monte carlo sampling of the 1d ising model at temperature T</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="c1"># initialize random spin configuration</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">n_sites</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">))</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">s</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="c1"># initialize energy and magnetization</span>
-    <span class="n">energy</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="c1"># initialize array for storing energy and magnetization at each step</span>
-    <span class="n">energy_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">mag_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="c1"># main loop</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
-        <span class="c1"># choose random site</span>
-        <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="c1"># calculate energy change</span>
-        <span class="n">energy_diff</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">J</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="p">[(</span><span class="n">nx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">,</span> <span class="n">ny</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[(</span><span class="n">nx</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">,</span> <span class="n">ny</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">nx</span><span class="p">,</span> <span class="p">(</span><span class="n">ny</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">nx</span><span class="p">,</span> <span class="p">(</span><span class="n">ny</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">])</span>
-        <span class="c1"># apply Metropolis condition</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="n">energy_diff</span><span class="o">/</span><span class="n">T</span><span class="p">):</span>
-            <span class="n">s</span><span class="p">[</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
-            <span class="n">energy</span> <span class="o">+=</span> <span class="n">energy_diff</span>
-            <span class="n">mag</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">]</span>
-        <span class="c1"># store energy and magnetization</span>
-        <span class="n">energy_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">energy</span>
-        <span class="n">mag_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mag</span>
-    <span class="c1"># return energy and magnetization</span>
-    <span class="k">return</span> <span class="n">energy_array</span><span class="p">,</span> <span class="n">mag_array</span>
+<span class="k">def</span> <span class="nf">unbdistance</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span><span class="n">lig_str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function returns a list of distances between center of mass of </span>
+<span class="sd">    protein and center of mass of lig_str in every frame of trajectory</span>
+<span class="sd">    traj</span>
+
+<span class="sd">    traj is an mdtraj trajectory object</span>
+<span class="sd">    lig_str is a string with the residue name of the ligand</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># get the indices of the atoms in the protein and ligand</span>
+    <span class="n">prot_ind</span> <span class="o">=</span> <span class="n">traj</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
+    <span class="n">lig_ind</span> <span class="o">=</span> <span class="n">traj</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">lig_str</span><span class="p">)</span>
+    <span class="c1"># get the center of mass of the protein and ligand</span>
+    <span class="n">com_prot</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">compute_center_of_mass</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">atom_slice</span><span class="p">(</span><span class="n">prot_ind</span><span class="p">))</span>
+    <span class="n">com_lig</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">compute_center_of_mass</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">atom_slice</span><span class="p">(</span><span class="n">lig_ind</span><span class="p">))</span>
+    <span class="c1"># compute the distance between the two centers of mass</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">com_prot</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">com_lig</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">com_prot</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">com_lig</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">com_prot</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">com_lig</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dist</span>
 </pre></div>
 
 </div>
@@ -14842,7 +14830,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1.9.7
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
@@ -14856,7 +14862,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<h2 id="Evaluate">Evaluate<a class="anchor-link" href="#Evaluate">&#182;</a></h2><p>Go to <a href="https://docs.google.com/forms/d/e/1FAIpQLScgNNwGoI-XsyKxckeVASHNxM3MQp-5hj6kSYVqgzBTMRNJFA/viewform?usp=pp_url&entry.977561167=result_mc_ising_d23Jan2022_T0.2_r2" target="_blank">Google Form</a></p>
+<h2 id="Evaluate">Evaluate<a class="anchor-link" href="#Evaluate">&#182;</a></h2><p>Go to <a href="https://docs.google.com/forms/d/e/1FAIpQLScgNNwGoI-XsyKxckeVASHNxM3MQp-5hj6kSYVqgzBTMRNJFA/viewform?usp=pp_url&entry.977561167=result_unbdistance_d23Jan2022_T0.2_r2" target="_blank">Google Form</a></p>
 
 </div>
 
