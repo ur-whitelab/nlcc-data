@@ -14807,35 +14807,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">This function performs metropolis monte carlo sampling of a harmonic potential at temperature T</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="c1"># initialize position and energy</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">E</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-
-    <span class="c1"># initialize array of positions and energies</span>
-    <span class="n">x_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">E_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">x_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">E_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span>
-
-    <span class="c1"># perform the monte carlo sampling</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_steps</span><span class="p">):</span>
-        <span class="c1"># propose a move</span>
-        <span class="n">x_new</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">E_new</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">x_new</span><span class="o">**</span><span class="mi">2</span>
-
-        <span class="c1"># calculate the acceptance probability</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">E_new</span> <span class="o">-</span> <span class="n">E</span><span class="p">)</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span>
-
-        <span class="c1"># accept or reject the move</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">uniform</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">x_new</span>
-            <span class="n">E</span> <span class="o">=</span> <span class="n">E_new</span>
-
-        <span class="c1"># save the position and energy</span>
-        <span class="n">x_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="n">E_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span>
-
-    <span class="k">return</span> <span class="n">x_arr</span><span class="p">,</span> <span class="n">E_arr</span>
+    <span class="c1"># Initialize the system</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
 </pre></div>
 
 </div>

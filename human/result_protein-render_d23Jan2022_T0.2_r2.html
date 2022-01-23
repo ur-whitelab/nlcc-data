@@ -3,7 +3,34 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>result_protein-render_d23Jan2022_T0.2_r2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>result_protein-render_d23Jan2022_T0.2_r2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        
+        var widgetRendererSrc = 'https://unpkg.com/@jupyter-js-widgets@*/dist/embed.js';
+        
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
 
 
 
@@ -14814,16 +14841,32 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
 
 <span class="c1"># Download 1GWD protein</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;1GWD.pdb&#39;</span><span class="p">):</span>
-    <span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">rcsb</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pdb</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">downloadFile</span><span class="o">.</span><span class="n">do</span><span class="err">?</span><span class="n">fileFormat</span><span class="o">=</span><span class="n">pdb</span><span class="o">&amp;</span><span class="n">compression</span><span class="o">=</span><span class="n">NO</span><span class="o">&amp;</span><span class="n">structureId</span><span class="o">=</span><span class="mi">1</span><span class="n">GWD</span>
-
-<span class="c1"># Render it</span>
-<span class="n">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_structure_file</span><span class="p">(</span><span class="s1">&#39;1GWD.pdb&#39;</span><span class="p">)</span>
-<span class="n">view</span>
-
-<span class="c1"># Embed in jupyter notebook</span>
-<span class="n">view</span><span class="o">.</span><span class="n">_display_image</span><span class="p">()</span>
+<span class="c1"># </span>
+<span class="c1"># 1GWD is a lysozyme (EC 3.2.1.17) from the bacterium Bacillus subtilis.</span>
+<span class="c1"># </span>
+<span class="c1"># [1GWD](https://www.rcsb.org/structure/1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.rcsb.org/download/downloadFile.do?fileFormat=pdb&amp;compression=NO&amp;structureId=1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://files.rcsb.org/download/1GWD.pdb)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://files.rcsb.org/download/1GWD.cif)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=NO&amp;structureId=1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=cif&amp;compression=NO&amp;structureId=1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=xml&amp;compression=NO&amp;structureId=1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=fasta&amp;compression=NO&amp;structureId=1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=pdbML&amp;compression=NO&amp;structureId=1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=cif&amp;compression=NO&amp;structureId=1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=pdbx&amp;compression=NO&amp;structureId=1GWD)</span>
+<span class="c1"># </span>
+<span class="c1"># [Download](https://www.</span>
 </pre></div>
 
 </div>
@@ -14845,9 +14888,27 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-OutputArea-child">
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>invalid syntax (&lt;string&gt;, line 24)
+<pre>1.9.7
 </pre>
 </div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+
+
+
+
+
+<div id="af01ef99-cafb-4b94-a357-5c5ca7fe011f" class="jupyter-widgets jp-OutputArea-output ">
+<script type="text/javascript">
+var element = document.getElementById('af01ef99-cafb-4b94-a357-5c5ca7fe011f');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "b50efea2f8e3484c8ebeaba09542c419", "version_major": 2, "version_minor": 0}
+</script>
+</div>
+
 </div>
 
 </div>
@@ -14885,6 +14946,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"1f722a5193334b9e8d2f7f2371fc4487": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b50efea2f8e3484c8ebeaba09542c419": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_1f722a5193334b9e8d2f7f2371fc4487"}}}, "version_major": 2, "version_minor": 0}
+</script>
 
 
 </html>
