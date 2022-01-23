@@ -1,0 +1,5 @@
+name: com
+language: python
+prompt: com.txt
+context: mdtraj
+test: com.py
