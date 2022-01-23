@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>result_mc_harmonic_d23Jan2022_T0.2_r2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>result_find_indices_d23Jan2022_T0.2_r0</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<h1 id="mc_harmonic-2">mc_harmonic 2<a class="anchor-link" href="#mc_harmonic-2">&#182;</a></h1><h2 id="Query">Query<a class="anchor-link" href="#Query">&#182;</a></h2>
+<h1 id="find_indices-0">find_indices 0<a class="anchor-link" href="#find_indices-0">&#182;</a></h1><h2 id="Query">Query<a class="anchor-link" href="#Query">&#182;</a></h2>
 </div>
 
 </div>
@@ -14673,21 +14673,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .vg { color: #19177C } /* Name.Variable.Global */
 .output_html .vi { color: #19177C } /* Name.Variable.Instance */
 .output_html .vm { color: #19177C } /* Name.Variable.Magic */
-.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Create matrix of ones</span>
+<span class="sd">Print version string</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span><span class="p">)</span>
 <span class="c1"># end</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This function performs metropolis monte carlo sampling of a harmonic potential at temperature T</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_ca_indices</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  This function uploads a pdb file and find out the indices of first two alpha carbon atoms.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
 </pre></div>
 
 </div>
@@ -14792,27 +14789,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .vg { color: #19177C } /* Name.Variable.Global */
 .output_html .vi { color: #19177C } /* Name.Variable.Instance */
 .output_html .vm { color: #19177C } /* Name.Variable.Magic */
-.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Create matrix of ones</span>
+<span class="sd">Print version string</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span><span class="p">)</span>
 <span class="c1"># end</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This function performs metropolis monte carlo sampling of a harmonic potential at temperature T</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="c1"># initialize position and velocity</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    
+<span class="k">def</span> <span class="nf">get_ca_indices</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  This function uploads a pdb file and find out the indices of first two alpha carbon atoms.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="c1"># load pdb file</span>
+  <span class="n">pdb</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">)</span>
+  <span class="c1"># get alpha carbons</span>
+  <span class="n">alpha_carbons</span> <span class="o">=</span> <span class="n">pdb</span><span class="o">.</span><span class="n">topology</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;name CA&#39;</span><span class="p">)</span>
+  <span class="c1"># get indices of first two alpha carbons</span>
+  <span class="n">ca_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">alpha_carbons</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">alpha_carbons</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+  <span class="k">return</span> <span class="n">ca_indices</span>
 </pre></div>
 
 </div>
@@ -14823,7 +14818,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1.9.7
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
@@ -14837,7 +14850,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output " data-mime-type="text/markdown">
-<h2 id="Evaluate">Evaluate<a class="anchor-link" href="#Evaluate">&#182;</a></h2><p>Go to <a href="https://docs.google.com/forms/d/e/1FAIpQLScgNNwGoI-XsyKxckeVASHNxM3MQp-5hj6kSYVqgzBTMRNJFA/viewform?usp=pp_url&entry.977561167=result_mc_harmonic_d23Jan2022_T0.2_r2" target="_blank">Google Form</a></p>
+<h2 id="Evaluate">Evaluate<a class="anchor-link" href="#Evaluate">&#182;</a></h2><p>Go to <a href="https://docs.google.com/forms/d/e/1FAIpQLScgNNwGoI-XsyKxckeVASHNxM3MQp-5hj6kSYVqgzBTMRNJFA/viewform?usp=pp_url&entry.977561167=result_find_indices_d23Jan2022_T0.2_r0" target="_blank">Google Form</a></p>
 
 </div>
 

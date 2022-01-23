@@ -14808,35 +14808,29 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="c1"># initialize random spin configuration</span>
-    <span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_sites</span><span class="p">,))</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_sites</span><span class="p">))</span>
     <span class="c1"># initialize energy and magnetization</span>
-    <span class="n">energy</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">sum</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-    <span class="c1"># initialize array of energies</span>
-    <span class="n">energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="c1"># initialize array of magnetizations</span>
-    <span class="n">magnetizations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># initialize energy and magnetization lists</span>
+    <span class="n">E_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">M_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="c1"># loop over steps</span>
     <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
-        <span class="c1"># choose random spin to flip</span>
-        <span class="n">site</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">)</span>
+        <span class="c1"># choose random spin</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="n">n_sites</span><span class="p">)</span>
         <span class="c1"># calculate energy change</span>
-        <span class="n">dE</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">state</span><span class="p">[</span><span class="n">site</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">J</span><span class="o">*</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="n">site</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">state</span><span class="p">[(</span><span class="n">site</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">])</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
-        <span class="c1"># calculate transition probability</span>
-        <span class="n">p_trans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dE</span><span class="o">/</span><span class="n">T</span><span class="p">)</span>
-        <span class="c1"># determine whether transition occurs</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p_trans</span><span class="p">:</span>
-            <span class="c1"># flip spin</span>
-            <span class="n">state</span><span class="p">[</span><span class="n">site</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
-            <span class="c1"># update energy</span>
-            <span class="n">energy</span> <span class="o">+=</span> <span class="n">dE</span>
-            <span class="c1"># update magnetization</span>
-            <span class="n">mag</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">state</span><span class="p">[</span><span class="n">site</span><span class="p">]</span>
-        <span class="c1"># store energy and magnetization</span>
-        <span class="n">energies</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="n">energy</span>
-        <span class="n">magnetizations</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="n">mag</span>
-    <span class="c1"># return energy and magnetization</span>
-    <span class="k">return</span> <span class="n">energies</span><span class="p">,</span> <span class="n">magnetizations</span>
+        <span class="n">dE</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">J</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="p">[(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n_sites</span><span class="p">])</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c1"># accept or reject step</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dE</span><span class="o">/</span><span class="n">T</span><span class="p">):</span>
+            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">E</span> <span class="o">+=</span> <span class="n">dE</span>
+            <span class="n">M</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c1"># append energy and magnetization to lists</span>
+        <span class="n">E_list</span><span class="o">.</span><span class="kp">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+        <span class="n">M_list</span><span class="o">.</span><span class="kp">append</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+    <span class="c1"># return energy and magnetization lists</span>
+    <span class="k">return</span> <span class="n">E_list</span><span class="p">,</span> <span class="n">M_list</span>
 </pre></div>
 
 </div>
