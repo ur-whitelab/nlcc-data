@@ -1,0 +1,7 @@
+name: gaussian_input_emin
+language: python
+prompt: gaussian_input_emin.txt
+label: gaussian_input_emin.py
+context: python
+test: gaussian_input_emin.py
+categories: qm, human
