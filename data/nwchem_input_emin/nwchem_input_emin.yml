@@ -1,0 +1,7 @@
+name: nwchem_input_emin
+language: python
+prompt: nwchem_input_emin.txt
+label: nwchem_input_emin.py
+context: python
+test: nwchem_input_emin.py
+categories: qm, human
