@@ -1,0 +1,6 @@
+name: velocity-verlet
+language: python
+prompt: velocity-verlet-ch.txt
+label: velocity-verlet-ch.py
+context: python 
+test: velocity-verlet-ch.py

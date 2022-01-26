@@ -1,0 +1,6 @@
+name: find_integers
+language: python
+prompt: find_integers.txt
+label: find_integers.py
+context: python
+test: find_integers.py

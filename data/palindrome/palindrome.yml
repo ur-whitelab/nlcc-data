@@ -1,0 +1,7 @@
+name: palindrome
+language: python
+prompt: palindrome.txt
+label: palindrome.py
+context: python
+test: palindrome.py
+

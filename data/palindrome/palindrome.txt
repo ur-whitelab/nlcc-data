@@ -1,0 +1,4 @@
+def minimum_changes(array):
+   """
+   This function finds the minimum number of elements that need to be changed to make the array palindromic.
+   """
