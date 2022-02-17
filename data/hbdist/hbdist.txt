@@ -1,0 +1,5 @@
+def hbond_distance(trj):
+    """
+    This function finds all the hydrogen bonds in trj
+    It then returns the distance between each hydrogen bonded atom pair
+    """
