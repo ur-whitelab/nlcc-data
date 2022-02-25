@@ -1,7 +1,6 @@
 name: pubchem
 language: python
 prompt: pubchem.txt
-label: pubchem.py
 context: rdkit
 test: pubchem.py
 categories: cheminf, code

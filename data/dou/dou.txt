@@ -1,0 +1,4 @@
+def calc_rdbs(smiles):
+    """
+    Return degrees of unsaturation
+    """
