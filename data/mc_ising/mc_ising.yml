@@ -1,0 +1,7 @@
+name: mc_ising
+language: python
+prompt: mc_ising.txt
+label: mc_ising.py
+context: numpy
+test: mc_ising.py
+categories: sim, human

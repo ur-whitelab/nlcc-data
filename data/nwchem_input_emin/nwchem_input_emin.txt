@@ -1,0 +1,4 @@
+def gen_input():
+     """
+     This function returns an input file for NWChem that computes the ground state energy of H2 using Hartree-Fock
+     """

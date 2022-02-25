@@ -1,0 +1,7 @@
+name: mc_harmonic
+language: python
+prompt: mc_harmonic.txt
+label: mc_harmonic.py
+context: numpy
+test: mc_harmonic.py
+categories: sim, human

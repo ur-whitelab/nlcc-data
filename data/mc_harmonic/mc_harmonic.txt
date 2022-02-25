@@ -1,0 +1,4 @@
+"""
+This function performs metropolis monte carlo sampling of a harmonic potential at temperature T
+"""
+def run_mc(n_steps, T, k):
