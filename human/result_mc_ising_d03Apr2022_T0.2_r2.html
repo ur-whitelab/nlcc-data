@@ -14819,46 +14819,75 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">run_mc</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="c1"># initialize random spin configuration</span>
-    <span class="n">config</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_sites</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="kp">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_sites</span><span class="p">,))</span>
     <span class="c1"># initialize energy and magnetization</span>
-    <span class="n">energy</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">sum</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># initialize energy and magnetization per spin</span>
+    <span class="n">E_per_spin</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">M_per_spin</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="c1"># initialize array of spins</span>
     <span class="n">spins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">((</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">))</span>
     <span class="c1"># initialize array of energies</span>
     <span class="n">energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
     <span class="c1"># initialize array of magnetizations</span>
     <span class="n">magnetizations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="c1"># loop over steps</span>
-    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
-        <span class="c1"># loop over sites</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_sites</span><span class="p">):</span>
-            <span class="c1"># calculate energy change</span>
-            <span class="n">energy_change</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="c1"># loop over nearest neighbors</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_sites</span><span class="p">):</span>
-                <span class="c1"># calculate energy change from spin flip</span>
-                <span class="n">energy_change</span> <span class="o">+=</span> <span class="o">-</span><span class="n">J</span><span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-            <span class="c1"># add energy change from external field</span>
-            <span class="n">energy_change</span> <span class="o">+=</span> <span class="n">h</span><span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-            <span class="c1"># calculate transition probability</span>
-            <span class="n">transition_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="n">energy_change</span><span class="o">/</span><span class="n">T</span><span class="p">)</span>
-            <span class="c1"># determine whether transition occurs</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">transition_prob</span><span class="p">:</span>
-                <span class="c1"># flip spin</span>
-                <span class="n">config</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">config</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-                <span class="c1"># update energy</span>
-                <span class="n">energy</span> <span class="o">+=</span> <span class="n">energy_change</span>
-                <span class="c1"># update magnetization</span>
-                <span class="n">mag</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-        <span class="c1"># store spin configuration</span>
-        <span class="n">spins</span><span class="p">[</span><span class="n">step</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">config</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
-        <span class="c1"># store energy</span>
-        <span class="n">energies</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="n">energy</span>
-        <span class="c1"># store magnetization</span>
-        <span class="n">magnetizations</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="n">mag</span>
-    <span class="c1"># return spins, energies, magnetizations</span>
-    <span class="k">return</span> <span class="n">spins</span><span class="p">,</span> <span class="n">energies</span><span class="p">,</span> <span class="n">magnetizations</span>
+    <span class="c1"># initialize array of spins per spin</span>
+    <span class="n">spins_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energies per spin</span>
+    <span class="n">energies_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetizations per spin</span>
+    <span class="n">magnetizations_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of probabilities</span>
+    <span class="n">probabilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of probabilities per spin</span>
+    <span class="n">probabilities_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of accepted configurations</span>
+    <span class="n">accepted_configurations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">((</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_sites</span><span class="p">))</span>
+    <span class="c1"># initialize array of accepted configurations per spin</span>
+    <span class="n">accepted_configurations_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences</span>
+    <span class="n">energy_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences per spin</span>
+    <span class="n">energy_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences</span>
+    <span class="n">magnetization_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences per spin</span>
+    <span class="n">magnetization_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences</span>
+    <span class="n">energy_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences per spin</span>
+    <span class="n">energy_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences</span>
+    <span class="n">magnetization_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences per spin</span>
+    <span class="n">magnetization_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences</span>
+    <span class="n">energy_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences per spin</span>
+    <span class="n">energy_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences</span>
+    <span class="n">magnetization_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences per spin</span>
+    <span class="n">magnetization_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences</span>
+    <span class="n">energy_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences per spin</span>
+    <span class="n">energy_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences</span>
+    <span class="n">magnetization_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences per spin</span>
+    <span class="n">magnetization_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences</span>
+    <span class="n">energy_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences per spin</span>
+    <span class="n">energy_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences</span>
+    <span class="n">magnetization_differences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of magnetization differences per spin</span>
+    <span class="n">magnetization_differences_per_spin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="c1"># initialize array of energy differences</span>
+    <span class="n">energy</span>
 </pre></div>
 
 </div>

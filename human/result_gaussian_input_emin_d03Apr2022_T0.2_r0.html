@@ -14814,14 +14814,68 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
      <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">     This function returns an input file for Gaussian that computes the ground state energy of H2 using Hartree-Fock</span>
 <span class="sd">     &quot;&quot;&quot;</span>
-     <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-     <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;hf/sto-3g</span><span class="se">\n</span><span class="s2">&quot;</span>
-     <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-     <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;0 1</span><span class="se">\n</span><span class="s2">&quot;</span>
-     <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;H</span><span class="se">\t</span><span class="s2">0.0</span><span class="se">\t</span><span class="s2">0.0</span><span class="se">\t</span><span class="s2">0.0</span><span class="se">\n</span><span class="s2">&quot;</span>
-     <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;H</span><span class="se">\t</span><span class="s2">0.0</span><span class="se">\t</span><span class="s2">0.0</span><span class="se">\t</span><span class="s2">1.0</span><span class="se">\n</span><span class="s2">&quot;</span>
-     <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-     <span class="k">return</span> <span class="n">output</span>
+     <span class="c1"># start</span>
+     <span class="c1"># create file</span>
+     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;input.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+     <span class="c1"># write basis set</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">hk=H2.chk</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%nprocshared=4</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%mem=4GB</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#p hf/sto-3g</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.735</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;--Link1--</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">hk=H2.chk</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%nprocshared=4</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%mem=4GB</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#p hf/sto-3g</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.735</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;--Link1--</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">hk=H2.chk</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%nprocshared=4</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%mem=4GB</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#p hf/sto-3g</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.735</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;--Link1--</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">hk=H2.chk</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%nprocshared=4</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%mem=4GB</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#p hf/sto-3g</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.735</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;--Link1--</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">hk=H2.chk</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%nprocshared=4</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;%mem=4GB</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#p hf/sto-3g</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;H</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.0</span><span class="se">\t</span><span class="s1">0.</span>
 </pre></div>
 
 </div>
@@ -14832,7 +14886,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>EOL while scanning string literal (&lt;string&gt;, line 75)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
