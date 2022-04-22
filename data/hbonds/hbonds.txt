@@ -1,0 +1,4 @@
+def hbonds(pdb):
+  """
+  This function returns the number of hydrogen bonds in file pdb via the baker-hubbard method
+  """
