@@ -1,0 +1,16 @@
+numpy
+matplotlib
+pandas
+scipy
+scikit-learn
+pybel
+rdkit-pypi
+mdanalysis
+mdtraj
+mendeleev
+sympy
+pyscf
+papermill
+jupyter
+nglview
+beautifulsoup4
