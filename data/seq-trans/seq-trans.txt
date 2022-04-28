@@ -2,3 +2,5 @@ def nucleotide_translate(gene_seq):
   """
   Converts nucleotide sequence to amino acids. Returns a string
   """
+  [insert]
+  return prot_seq

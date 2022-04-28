@@ -5,3 +5,5 @@ def arrhenius(k2,T2,T1,Ea):
    Ea is the activation energy in J/mol.
    Temperatures are given in Kelvin
    """
+   [insert]
+   return k1

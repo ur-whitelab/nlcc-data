@@ -2,3 +2,5 @@ def get_hydrophobic_residues(pdb_filename):
   """
   Returns list of hydrophobic residues indices
   """
+  [insert]
+  return resids

@@ -4,3 +4,5 @@ def random_walk(N):
     """
     a = 1 # lattice spacing
     x0 = 0
+    [insert]
+    return traj

@@ -8,3 +8,5 @@ def lipinski_rule_of_five(smiles):
     Molecular weight < 500 daltons
     logP < 5
     """
+    [insert]
+    return result

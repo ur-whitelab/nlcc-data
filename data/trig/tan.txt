@@ -1,4 +1,0 @@
-def f_tan(x):
-  """
-  This function computes the tangent of all elements in array x.
-  """

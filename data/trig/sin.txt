@@ -1,4 +1,0 @@
-def f_sin(x):
-  """
-  This function computes the sine of all elements in array x.
-  """

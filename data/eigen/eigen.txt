@@ -2,3 +2,5 @@ def eigen(M):
     """
     Return eigenvalues and eigenvectors for a square matrix M
     """
+    [insert]
+    return w,v

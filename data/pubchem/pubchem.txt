@@ -5,3 +5,5 @@ def find_similar(smiles):
   Returns a set of molecules with greater than 80% similarity using the PubChem REST API.
   The returned molecules are SMILES strings, not CIDs.
   """
+  [insert]
+  return mols

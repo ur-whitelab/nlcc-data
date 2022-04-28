@@ -4,3 +4,5 @@ def freezing_depression(Kf,m):
    The depression constant is Kf in K kg/mol and is greater than zero
    Molality m is given in mol/kg
    """
+   [insert]
+   return deltaT

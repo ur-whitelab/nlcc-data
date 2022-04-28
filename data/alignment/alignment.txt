@@ -1,4 +1,6 @@
-def get_aligned_trj(trj, alignment_frame):
+def align_traj(traj, frame_index):
   """
-  This function aligns trj to frame alignment_frame in trj
+  This function aligns the given mdtraj trajectory to a specific frame
   """
+  [insert]
+  return traj

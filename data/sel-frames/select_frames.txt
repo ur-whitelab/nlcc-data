@@ -1,4 +1,0 @@
-def select_frames(traj_file,top_file,n):
-  """
-  This fucntion returns first n frames from loaded trajectory traj_file and topology in top_file
-  """

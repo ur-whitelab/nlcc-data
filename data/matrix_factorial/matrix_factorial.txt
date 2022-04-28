@@ -2,3 +2,5 @@ def matrix_factorial(n):
      """
      This function calculates and returns the factorial of a matrix (array) element wise
      """
+     [insert]
+     return f

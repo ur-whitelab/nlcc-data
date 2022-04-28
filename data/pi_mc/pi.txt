@@ -1,2 +1,4 @@
 def pi(nsamples):
     """ This function returns the value of pi by monte carlo sampling """
+    [insert]
+    return pi_est

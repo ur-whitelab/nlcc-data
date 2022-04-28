@@ -2,3 +2,5 @@ def de_broglie(m,v):
    """
    This function returns the de Broglie wavelength for a particle of mass m with speed v.
    """
+   [insert]
+   return l

@@ -2,3 +2,5 @@ def rmse(a,b):
   """
   This function evaluates the root mean square error (rmse) between a and b.
   """
+  [insert]
+  return e

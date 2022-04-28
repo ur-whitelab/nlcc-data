@@ -2,3 +2,5 @@ def particle_in_box(n,m,L,hbar=1):
    """
    This function returns the energy for a quantum particle in a 1d box
    """
+   [insert]
+   return e

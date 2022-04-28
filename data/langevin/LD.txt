@@ -1,8 +1,8 @@
 def run_langevin_dynamics(x0,v0,gamma,F,n_steps,dt=0.003,T=1.0,m=1):
     """
-    This function runs a langevin dynamics simluation in 1d in an external potential
+    This function runs a Langevin dynamics simulation in 1d in an external potential
     It returns the trajectory of x and v.
-    
+
     The initial position is x0
     The initial velocity is v0
     The temperature is T
@@ -12,3 +12,5 @@ def run_langevin_dynamics(x0,v0,gamma,F,n_steps,dt=0.003,T=1.0,m=1):
     """
     x_traj = np.zeros(n_steps)
     v_traj = np.zeros(n_steps)
+    [insert]
+    return x_traj, v_traj

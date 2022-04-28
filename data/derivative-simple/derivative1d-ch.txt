@@ -3,4 +3,5 @@ def find_derivative(a,b,c,x):
   这个函数通过生成含有参数a，b，c的二阶多項式来计算x处的一阶导数。
 
   """
-
+  [insert]
+  return d

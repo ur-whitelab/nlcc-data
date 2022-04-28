@@ -2,3 +2,5 @@ def substructure(smiles, mol_list):
     """
     This function takes a smiles string and searches mol_list to find entries that contain the substructure. It returns the indices of these entries.
     """
+    [insert]
+    return idx

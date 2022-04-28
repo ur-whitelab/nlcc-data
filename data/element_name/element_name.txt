@@ -3,3 +3,5 @@ def symbol(element_number):
   This function returns the two letter symbol for the chemical element given by element_number
   """
   import mendeleev
+  [insert]
+  return s

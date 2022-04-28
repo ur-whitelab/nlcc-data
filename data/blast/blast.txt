@@ -9,3 +9,5 @@ def blast(seq):
     4. Parse MSA
     5. Return a tuple of e score, id of top match
     '''
+    [insert]
+    return e, id

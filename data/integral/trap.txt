@@ -2,3 +2,5 @@ def trap(f, n, a, b):
   """
   This function evaluates the integral of a univariate function f from a to b with n itervals using the composite trapezoidal rule.
   """
+  [insert]
+  return integral

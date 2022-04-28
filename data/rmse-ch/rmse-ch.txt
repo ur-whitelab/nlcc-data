@@ -2,3 +2,5 @@ def rmse(a,b):
   """
   这个函数计算a和b之间的均方根误差
   """
+  [insert]
+  return e

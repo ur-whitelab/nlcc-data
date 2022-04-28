@@ -2,3 +2,5 @@ def fourier_1d(x):
   """
   This function returns the one dimensional fourier transform of array x.
   """
+  [insert]
+  return w

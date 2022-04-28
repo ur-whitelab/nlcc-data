@@ -1,4 +1,6 @@
 def energy_of_e(n):
     """
-    This function calculates the energy in electron Volts of an electron in state n in a hydrogen atom 
+    This function calculates the energy in electron Volts of an electron in state n in a hydrogen atom
     """
+    [insert]
+    return energy

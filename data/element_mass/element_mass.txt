@@ -3,3 +3,5 @@ def element_mass(element_symbol):
    This function returns the mass of the chemical element given by its symbol
    """
    import mendeleev
+   [insert]
+   return mass

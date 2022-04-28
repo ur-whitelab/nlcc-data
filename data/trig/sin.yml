@@ -1,7 +1,0 @@
-name: sin
-language: python
-prompt: sin.txt
-label: sin.py
-context: numpy
-test: sin.py
-categories: numerics, code

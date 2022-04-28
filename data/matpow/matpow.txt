@@ -2,3 +2,5 @@ def matpow(x,n):
   """
   This function computes matrix x raised to the power n.
   """
+  [insert]
+  return r

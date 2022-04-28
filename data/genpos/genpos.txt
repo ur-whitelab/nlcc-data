@@ -2,3 +2,5 @@ def matrix_generators(gnum):
    """
    Returns list of matrix generators for general positions of given space group
    """
+   [insert]
+   return generators

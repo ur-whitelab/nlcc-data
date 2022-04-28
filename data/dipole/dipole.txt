@@ -5,3 +5,5 @@ def dipole_moment(coordinates, charges):
   Coordinates is a numpy array of size Nx3
   Charges is a numpy array of size N
   """
+  [insert]
+  return dipole_moment

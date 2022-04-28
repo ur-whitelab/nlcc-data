@@ -4,3 +4,5 @@ def get_descriptors(smiles_list):
     """
     Returns an N x 8 matrix of descriptors for given SMILEs
     """
+    [insert]
+    return descriptors

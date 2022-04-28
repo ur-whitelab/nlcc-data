@@ -2,3 +2,5 @@ def eigen(M):
     """
     该函数返回矩阵M的特征值和特征向量。
     """
+    [insert]
+    return w,v

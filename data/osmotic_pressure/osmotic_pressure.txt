@@ -5,3 +5,5 @@ def osmotic_pressure_concentration(Pi,T):
    Pi is in atm
    """
    R = 0.08206 # l atm /K /mol
+   [insert]
+   return p

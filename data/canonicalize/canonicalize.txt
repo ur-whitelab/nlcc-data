@@ -2,3 +2,5 @@ def canonical(smiles_list):
     """
     Returns list of canonical forms of given molecules
     """
+    [insert]
+    return canon_list

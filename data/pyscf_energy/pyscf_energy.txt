@@ -1,4 +1,6 @@
 def calc_molecule_energy(atom,basis):
     """
-    This function returns the ground state energy for atom using restricted hartree fock in the given basis
+    This function returns the ground state energy for atom using restricted Hartree-Fock in the given basis
     """
+    [insert]
+    return ground_energy

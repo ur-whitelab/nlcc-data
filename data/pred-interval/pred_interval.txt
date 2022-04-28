@@ -1,4 +1,6 @@
 def num_trials(pred_level):
     """Returns the minimum number of trials needed to achieve
-       a probablity given by pred_level in a geometric distribution
+       a probability given by pred_level in a geometric distribution
     """
+   [insert]
+   return n

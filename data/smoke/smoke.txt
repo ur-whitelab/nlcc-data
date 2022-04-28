@@ -3,3 +3,5 @@ def smoke(x):
   This function checks to make sure things are working
   by returning 10
   """
+  [insert]
+  return result
