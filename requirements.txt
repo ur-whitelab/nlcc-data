@@ -4,7 +4,7 @@
 #
 #    pip-compile --index-url=http://localhost:1895 requirements.in
 #
---index-url http://localhost:1895
+# --index-url http://localhost:1895
 
 ansiwrap==0.8.4
     # via papermill
