@@ -14525,98 +14525,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="c1"># 4. Embed in jupyter notebook</span>
 <span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
 <span class="kp">view</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="s1">&#39;orthographic&#39;</span>
 <span class="kp">view</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
 <span class="kp">view</span>
-
-<span class="c1"># 5. Save as a picture</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">()</span>
-
-<span class="c1"># 6. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 7. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 8. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 9. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 10. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 11. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 12. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 13. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 14. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 15. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 16. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 17. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 18. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;lysozyme.png&#39;</span><span class="p">)</span>
-
-<span class="c1"># 19. Save as a movie</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14640,12 +14552,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 
-<div id="0305a9c7-5f3b-4187-ade0-039c37f21ecc" class="jupyter-widgets jp-OutputArea-output ">
+<div id="56170fa1-7c85-4bce-bad3-cbb4342117b8" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('0305a9c7-5f3b-4187-ade0-039c37f21ecc');
+var element = document.getElementById('56170fa1-7c85-4bce-bad3-cbb4342117b8');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8cd93d169cc7499681daf15595781a1c", "version_major": 2, "version_minor": 0}
+{"model_id": "b639642a9b1b4b28af0c4c535e3e9cdf", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14694,7 +14606,7 @@ var element = document.getElementById('0305a9c7-5f3b-4187-ade0-039c37f21ecc');
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"8cd93d169cc7499681daf15595781a1c": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_bdac9813f4074166a7e4141637bdab9a"}}, "bdac9813f4074166a7e4141637bdab9a": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
+{"state": {"3b4bc5f039fd4413a146aaa205102c84": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b639642a9b1b4b28af0c4c535e3e9cdf": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_3b4bc5f039fd4413a146aaa205102c84"}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
