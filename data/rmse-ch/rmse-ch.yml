@@ -4,4 +4,4 @@ prompt: rmse-ch.txt
 label: rmse-ch.py
 context: numpy
 test: rmse-ch.py
-categories: stats, code, ch
+categories: disabled, stats, code, ch

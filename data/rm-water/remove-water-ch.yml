@@ -4,4 +4,4 @@ prompt: remove-water-ch.txt
 label: remove-water-ch.py
 context: mdtraj
 test: remove-water-ch.py
-categories: md, code, ch
+categories: disabled, md, code, ch

@@ -1,4 +1,4 @@
-def num_trials(pred_level):
+def num_trials(pred_level, p):
    """Returns the minimum number of trials needed to achieve
       a probability given by pred_level in a geometric distribution
    """
