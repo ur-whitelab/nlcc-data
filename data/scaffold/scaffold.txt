@@ -1,6 +1,6 @@
 def scaffold(smiles):
     """
-    Returns scaffold SMILES of given molecule
+    Returns Murcko scaffold of given molecule
     """
     [insert]
-    return scaffold
+    return scaffold_smiles

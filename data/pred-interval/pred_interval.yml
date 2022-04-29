@@ -1,4 +1,4 @@
-name: Num_trials
+name: pred_interval
 language: python
 prompt: pred_interval.txt
 label: pred_interval.py

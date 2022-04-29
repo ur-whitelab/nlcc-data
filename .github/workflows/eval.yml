@@ -21,8 +21,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install ./nlcc/
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install ./nlcc/
     - name: Evaluate
       env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

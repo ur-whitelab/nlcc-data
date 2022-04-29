@@ -1,1 +1,5 @@
-result = scaffold('C1([O-])C=CC=C1NCC[NH+]') == 'C1=CCC=C'
+smiles = 'C1([O-])C=CC=C1NCC[NH+]'
+mol = Chem.MolFromSmiles(smiles)
+sc = rdkit.Chem.rdMolHash.MolHash(
+    mol, rdkit.Chem.rdMolHash.HashFunction.MurckoScaffold)
+result = scaffold(smiles) == sc

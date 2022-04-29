@@ -1,6 +1,7 @@
 def ohe(a):
   """
-  This function generates one-hot encodings for the categorical variables in list a.
+  This function generates one-hot encodings for
+  the class names in the given list of strings.
   """
   [insert]
   return v
