@@ -1,0 +1,6 @@
+def carnot_efficiency(T_hot, T_cold):
+   """
+   This function returns the efficiency of a carnot efficiency operating between two temperatures
+   """
+   [insert]
+   return eps
