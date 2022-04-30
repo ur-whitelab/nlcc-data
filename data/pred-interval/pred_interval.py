@@ -9,4 +9,4 @@ for n in samples:
     if(psum >= prediction_level):
         break
 
-result = True if num_trials(prediction_level) == n else False
+result = True if num_trials(prediction_level, p) == n else False
