@@ -1,7 +1,0 @@
-name: remove-water-ch
-language: python
-prompt: remove-water-ch.txt
-label: remove-water-ch.py
-context: mdtraj
-test: remove-water-ch.py
-categories: disabled, md, code, ch
