@@ -1,0 +1,7 @@
+name: heating_water
+language: python
+prompt: heating_water.txt
+label: heating_water.py
+context: python
+test: heating_water.py
+categories: thermo, code
