@@ -1,0 +1,7 @@
+name: carnot_efficiency
+language: python
+prompt: carnot_efficiency.txt
+label: carnot_efficiency.py
+context: python
+test: carnot_efficiency.py
+categories: thermo, code

@@ -1,0 +1,6 @@
+def heating_energy(n, T1, T2):
+   """
+   This function returns the energy in kcal required to heat n moles of water from T1 to T2
+   """
+   [insert]
+   return q

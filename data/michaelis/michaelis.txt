@@ -1,0 +1,6 @@
+def reaction_velocity(Vmax, S, Km):
+   """
+   This function returns the initial reaction rate according to Michaelis-Menten kinetics
+   """
+   [insert]
+   return v

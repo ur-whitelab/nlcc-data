@@ -1,0 +1,7 @@
+def rms_velocity(T,m):
+   """
+   This function returns the root-mean-squared velocity of an ideal gas molecule at temperature T
+   m is mass in g/mol
+   """
+   [insert]
+   return v_rms

@@ -1,0 +1,7 @@
+name: adiabatic_expansion
+language: python
+prompt: adiabatic_expansion.txt
+label: adiabatic_expansion.py
+context: python
+test: adiabatic_expansion.py
+categories: thermo, code

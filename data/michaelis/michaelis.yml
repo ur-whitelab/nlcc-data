@@ -1,0 +1,7 @@
+name: michaelis
+language: python
+prompt: michaelis.txt
+label: michaelis.py
+context: python
+test: michaelis.py
+categories: thermo, bio, code

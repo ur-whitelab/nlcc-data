@@ -1,0 +1,6 @@
+def cooling(T1,P1,P2,gamma):
+   """
+   This function returns the temperature of an ideal gas expanding adiabatically from P1 to P2
+   """
+   [insert]
+   return T2

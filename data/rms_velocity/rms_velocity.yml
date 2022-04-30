@@ -1,0 +1,7 @@
+name: rms_velocity
+language: python
+prompt: rms_velocity.txt
+label: rms_velocity.py
+context: python
+test: rms_velocity.py
+categories: thermo, code

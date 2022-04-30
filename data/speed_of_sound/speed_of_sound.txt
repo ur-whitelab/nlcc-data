@@ -1,0 +1,7 @@
+def speed_of_sound(T,m,gamma):
+   """
+   This function returns the speed of sound for an ideal gas at temperature T
+   m is mass in g/mol
+   """
+   [insert]
+   return s
