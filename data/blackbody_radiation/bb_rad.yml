@@ -1,6 +1,6 @@
-name: bb_rad  
+name: bb_rad
 language: python
 prompt: bb_rad.txt
-label: bb_rad.py
-context: python
+context: numpy
 test: bb_rad.py
+categories: spectroscopy, code
