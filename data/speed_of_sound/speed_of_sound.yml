@@ -1,0 +1,7 @@
+name: speed_of_sound
+language: python
+prompt: speed_of_sound.txt
+label: speed_of_sound.py
+context: python
+test: speed_of_sound.py
+categories: thermo, code
