@@ -1,0 +1,7 @@
+name: claussius
+language: python
+prompt: claussius.txt
+label: claussius.py
+context: python
+test: claussius.py
+categories: thermo, code
