@@ -14490,23 +14490,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">Make sure everything fits in the plot</span>
 <span class="sd">Save to legend.png</span>
 <span class="sd">&quot;&quot;&quot;</span>
-
-<span class="c1"># Generate data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-
-<span class="c1"># Plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gaussian random noise&#39;</span><span class="p">)</span>
-
-<span class="c1"># Add legend</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
-
-<span class="c1"># Fit everything in the plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
-<span class="c1"># Save figure</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;legend.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14517,35 +14500,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&#39;Polygon&#39; object has no property &#39;normed&#39;
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
