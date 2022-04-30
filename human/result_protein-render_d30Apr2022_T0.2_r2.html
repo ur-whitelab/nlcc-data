@@ -14501,56 +14501,114 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="kp">view</span>
 
 <span class="c1"># 4. Embed in jupyter notebook</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">)</span>
 <span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
 <span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="s1">&#39;orthographic&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
+<span class="kp">view</span>
+
+<span class="c1"># 5. Save image</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 6. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 7. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 8. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 9. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 10. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 11. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 12. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 13. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 14. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 15. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 16. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 17. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 18. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 19. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 20. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 21. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 22. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 23. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 24. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 25. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 26. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 27. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 28. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.png&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span>
+
+<span class="c1"># 29. Save image to file</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">image_png</span> <span class="o">=</span> <span class="s1">&#39;lysozyme.</span>
 </pre></div>
 
 </div>
@@ -14570,7 +14628,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-OutputArea-child">
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>unexpected EOF while parsing (&lt;string&gt;, line 74)
+<pre>EOL while scanning string literal (&lt;string&gt;, line 132)
 </pre>
 </div>
 </div>
