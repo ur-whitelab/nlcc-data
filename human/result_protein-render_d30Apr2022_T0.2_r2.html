@@ -14513,29 +14513,102 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="c1"># 1. import packages</span>
-<span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
 <span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
 
 <span class="c1"># 2. Download 1GWD protein</span>
-<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;1gwd.pdb&#39;</span><span class="p">)</span>
-<span class="kp">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_mdtraj</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
-<span class="kp">view</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;http://www.rcsb.org/pdb/files/1GWD.pdb&#39;</span><span class="p">)</span>
 
 <span class="c1"># 3. Render it</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_licorice</span><span class="p">(</span><span class="s1">&#39;not hydrogen&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_surface</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
-<span class="kp">view</span>
+<span class="kp">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_mdtraj</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
 
 <span class="c1"># 4. Embed in jupyter notebook</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">_remote_call</span><span class="p">(</span><span class="s1">&#39;setSize&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Widget&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="s1">&#39;600px&#39;</span><span class="p">])</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
 <span class="kp">view</span>
 
-<span class="c1"># 5. Save as a picture</span>
+<span class="c1"># 5. Save picture</span>
 <span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">()</span>
+
+<span class="c1"># 6. Save picture with a specific size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">))</span>
+
+<span class="c1"># 7. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 8. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 9. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 10. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 11. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 12. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 13. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 14. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 15. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 16. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 17. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 18. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 19. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 20. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 21. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 22. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 23. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 24. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 25. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 26. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 27. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 28. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 29. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 30. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 31. Save picture with a specific size and transparent background</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 32.</span>
 </pre></div>
 
 </div>
@@ -14559,12 +14632,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 
-<div id="17147aef-b889-4a99-ad5d-c410f45347a4" class="jupyter-widgets jp-OutputArea-output ">
+<div id="7e9b690e-4e67-429b-9813-f97459d55ba6" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('17147aef-b889-4a99-ad5d-c410f45347a4');
+var element = document.getElementById('7e9b690e-4e67-429b-9813-f97459d55ba6');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d2ad66d57097484e9bc720b26d400f75", "version_major": 2, "version_minor": 0}
+{"model_id": "94dce23130194d67aba07f1c16b2a38c", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14573,7 +14646,7 @@ var element = document.getElementById('17147aef-b889-4a99-ad5d-c410f45347a4');
 <div class="jp-OutputArea-child">
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>No such file: 1gwd.pdb
+<pre>No such file: http://www.rcsb.org/pdb/files/1GWD.pdb
 </pre>
 </div>
 </div>
@@ -14613,7 +14686,7 @@ var element = document.getElementById('17147aef-b889-4a99-ad5d-c410f45347a4');
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"7f6c1dc9d48344a282b5569ae7f322d4": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d2ad66d57097484e9bc720b26d400f75": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_7f6c1dc9d48344a282b5569ae7f322d4"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"94dce23130194d67aba07f1c16b2a38c": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_f7e0997de6a14b359baed18108543f4e"}}, "f7e0997de6a14b359baed18108543f4e": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 

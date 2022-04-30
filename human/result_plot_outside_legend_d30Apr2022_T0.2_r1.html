@@ -14490,6 +14490,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">Make sure everything fits in the plot</span>
 <span class="sd">Save to legend.png</span>
 <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Generate data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gaussian random noise&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add a legend</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+<span class="c1"># Make sure everything fits in the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Save to legend.png</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;legend.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14500,7 +14517,35 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&#39;Polygon&#39; object has no property &#39;normed&#39;
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 

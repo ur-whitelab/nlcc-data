@@ -3,7 +3,30 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>result_protein-render_d30Apr2022_T0.2_r0</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>result_protein-render_d30Apr2022_T0.2_r0</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'https://unpkg.com/jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
 
 
 
@@ -14494,62 +14517,103 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
 
 <span class="c1"># 2. Download 1GWD protein</span>
-<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;http://www.rcsb.org/pdb/files/1gwd.pdb&#39;</span><span class="p">)</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;http://www.rcsb.org/pdb/files/1GWD.pdb&#39;</span><span class="p">)</span>
 
 <span class="c1"># 3. Render it</span>
 <span class="kp">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_mdtraj</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
-<span class="kp">view</span>
 
 <span class="c1"># 4. Embed in jupyter notebook</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span>
+<span class="kp">view</span>
+
+<span class="c1"># 5. Add a surface representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_surface</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># 6. Add a cartoon representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">()</span>
+
+<span class="c1"># 7. Add a line representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_line</span><span class="p">()</span>
+
+<span class="c1"># 8. Add a spacefill representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_spacefill</span><span class="p">()</span>
+
+<span class="c1"># 9. Add a ball and stick representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_ball_and_stick</span><span class="p">()</span>
+
+<span class="c1"># 10. Add a licorice representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_licorice</span><span class="p">()</span>
+
+<span class="c1"># 11. Add a hyperball representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_hyperball</span><span class="p">()</span>
+
+<span class="c1"># 12. Add a tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">()</span>
+
+<span class="c1"># 13. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 14. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 15. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 16. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 17. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 18. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 19. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 20. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 21. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 22. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 23. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 24. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 25. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 26. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 27. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 28. Add a cartoon and tube representation</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_tube</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 29. Add</span>
 </pre></div>
 
 </div>
@@ -14568,8 +14632,26 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <div class="jp-OutputArea-child">
 
+
+
+
+
+
+<div id="06f8fcca-8e73-4f53-aa69-646cdd5603b2" class="jupyter-widgets jp-OutputArea-output ">
+<script type="text/javascript">
+var element = document.getElementById('06f8fcca-8e73-4f53-aa69-646cdd5603b2');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "0959ea03afb4496591b9e86d995a7966", "version_major": 2, "version_minor": 0}
+</script>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>unexpected EOF while parsing (&lt;string&gt;, line 73)
+<pre>No such file: http://www.rcsb.org/pdb/files/1GWD.pdb
 </pre>
 </div>
 </div>
@@ -14607,6 +14689,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"0959ea03afb4496591b9e86d995a7966": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_817ce04edd3047ccb3a7d8ba50aacc35"}}, "817ce04edd3047ccb3a7d8ba50aacc35": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
+</script>
 
 
 </html>
