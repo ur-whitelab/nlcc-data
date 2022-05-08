@@ -28,10 +28,13 @@ jobs:
     - name: Evaluate
       env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HUGGING_FACE_API_KEY: ${{ secrets.HUGGING_FACE_API_KEY }}
       run: |
         mkdir -p dist/human
-        nlcc-eval data/**/*.yml --n 5 --prompt insert --temperature 0.2 > index.md
-        nlcc-human --n 3 data/**/*.yml --out-dir /var/tmp --prompt insert >> index.md
+        nlcc-human --n 3 data/**/*.yml --out-dir /var/tmp --prompt insert > index.md
+        nlcc-eval data/**/*.yml --n 5 --prompt insert --temperature 0.2 >> index.md
+        nlcc-eval data/**/*.yml --n 5 --engine openai/code-cushman-001 --temperature 0.2 >> index.md
+        nlcc-eval data/**/*.yml --n 5 --prompt insert --engine incoder/facebook/incoder-1B --temperature 0.2 >> index.md
         pandoc -s --toc -f markdown -i index.md -o dist/index.html --metadata title="nlcc report"
         for f in /var/tmp/*yml; do papermill -f $f human_eval_template.ipynb "${f%.yml}".ipynb; done;
         for f in /var/tmp/*ipynb; do jupyter-nbconvert --to=html --no-input $f --output-dir=dist/human; done;
