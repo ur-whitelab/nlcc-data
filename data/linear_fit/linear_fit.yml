@@ -1,0 +1,6 @@
+name: linear_fit  
+language: python
+prompt: linear_fit.txt
+label: linear_fit.py
+context: numpy
+test: linear_fit.py

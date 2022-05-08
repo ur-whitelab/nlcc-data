@@ -1,0 +1,9 @@
+def linear_fit(x,y):
+   """
+   This function does the linear least square fitting of data y vs. x.
+   It returns the value of slope and intercept. 
+   """ 
+       
+       
+       
+       
