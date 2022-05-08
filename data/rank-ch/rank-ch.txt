@@ -1,6 +1,0 @@
-def rank(M):
-    """
-    这个函数使用奇异值分解来计算矩阵M的秩。
-    """
-    [insert]
-    return r
