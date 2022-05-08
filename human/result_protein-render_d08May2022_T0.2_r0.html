@@ -14492,68 +14492,104 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="c1"># 1. import packages</span>
 <span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
 <span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 2. Download 1GWD protein</span>
-<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;http://www.rcsb.org/pdb/files/1GWD.pdb&#39;</span><span class="p">)</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;1gwd.pdb&#39;</span><span class="p">)</span>
 
 <span class="c1"># 3. Render it</span>
 <span class="kp">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_mdtraj</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
 <span class="kp">view</span>
 
 <span class="c1"># 4. Embed in jupyter notebook</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;tube&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;rope&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;trace&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ribbon&#39;</span><span class="p">)</span>
 <span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;tube&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;rope&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;trace&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ribbon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;tube&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;rope&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;trace&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ribbon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;tube&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;rope&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;trace&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ribbon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and backbone&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and sidechain&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and sidechain&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and sidechain&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and sidechain&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and sidechain&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and sidechain&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and sidechain&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;tube&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein and sidechain&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;rope&#39;</span><span class="p">,</span> <span class="n">selection</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">)</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="s1">&#39;orthographic&#39;</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
+<span class="kp">view</span>
+
+<span class="c1"># 5. Save the picture</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">()</span>
+
+<span class="c1"># 6. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 7. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 8. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 9. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 10. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+
+<span class="c1"># 11. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;1gwd.png&#39;</span><span class="p">)</span>
+
+<span class="c1"># 12. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;1gwd.png&#39;</span><span class="p">,</span>
+         <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 13. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;1gwd.png&#39;</span><span class="p">,</span>
+         <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># 14. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;1gwd.png&#39;</span><span class="p">,</span>
+         <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+         <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 15. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;1gwd.png&#39;</span><span class="p">,</span>
+         <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+         <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">full_resolution</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 16. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;1gwd.png&#39;</span><span class="p">,</span>
+         <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+         <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">full_resolution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">camera_type</span><span class="o">=</span><span class="s1">&#39;orthographic&#39;</span><span class="p">)</span>
+
+<span class="c1"># 17. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;1gwd.png&#39;</span><span class="p">,</span>
+         <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+         <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">full_resolution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">camera_type</span><span class="o">=</span><span class="s1">&#39;orthographic&#39;</span><span class="p">,</span>
+         <span class="n">camera_fov</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># 18. Save the picture with a different size</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;1gwd.png&#39;</span><span class="p">,</span>
+         <span class="n">scale</span><span class="o">=</span>
 </pre></div>
 
 </div>
@@ -14573,7 +14609,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-OutputArea-child">
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>unexpected EOF while parsing (&lt;string&gt;, line 77)
+<pre>unexpected EOF while parsing (&lt;string&gt;, line 113)
 </pre>
 </div>
 </div>
