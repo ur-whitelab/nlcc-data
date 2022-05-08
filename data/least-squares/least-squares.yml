@@ -1,0 +1,6 @@
+name: weighted-least-squares
+language: python
+prompt: least-squares.txt
+context: numpy
+test: least-squares.py
+categories: stats, code

@@ -1,0 +1,5 @@
+def lsq(x, y, w):
+    ''' Returns fit coefficients from weighted least squares. x should be a matrix.
+    '''
+    [insert]
+    return beta
