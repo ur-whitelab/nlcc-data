@@ -14490,22 +14490,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">Make sure everything fits in the plot</span>
 <span class="sd">Save to legend.png</span>
 <span class="sd">&quot;&quot;&quot;</span>
-
-<span class="c1"># Generate data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-
-<span class="c1"># Plot data</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Add labels</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-
-<span class="c1"># Add legend</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;gaussian&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
-
-<span class="c1"># Save figure</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;legend.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14516,35 +14500,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&#39;Rectangle&#39; object has no property &#39;normed&#39;
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 

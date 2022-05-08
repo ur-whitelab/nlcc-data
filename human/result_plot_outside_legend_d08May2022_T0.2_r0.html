@@ -14490,15 +14490,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">Make sure everything fits in the plot</span>
 <span class="sd">Save to legend.png</span>
 <span class="sd">&quot;&quot;&quot;</span>
-
-<span class="c1"># Generate data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-
-<span class="c1"># Plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gaussian&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;legend.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14509,35 +14500,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
-
-<div class="jp-Cell-outputWrapper">
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&#39;Polygon&#39; object has no property &#39;normed&#39;
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 

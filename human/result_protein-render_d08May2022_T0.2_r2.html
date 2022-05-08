@@ -14518,79 +14518,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 2. Download 1GWD protein</span>
-<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;1gwd.pdb&#39;</span><span class="p">)</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;1GWD.pdb&#39;</span><span class="p">)</span>
 
 <span class="c1"># 3. Render it</span>
 <span class="kp">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_mdtraj</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
 
 <span class="c1"># 4. Embed in jupyter notebook</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">)</span>
 <span class="kp">view</span>
 
-<span class="c1"># 5. Save the picture</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">()</span>
-
-<span class="c1"># 6. Save the picture with a specific size</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
-
-<span class="c1"># 7. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># 8. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># 9. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># 10. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
-
-<span class="c1"># 11. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="c1"># 12. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">progressive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># 13. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">progressive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">compression_level</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
-
-<span class="c1"># 14. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">progressive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">compression_level</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># 15. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">progressive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">compression_level</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent_color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
-
-<span class="c1"># 16. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">progressive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">compression_level</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent_color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span>
-         <span class="n">transparent_alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># 17. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">progressive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">compression_level</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent_color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span>
-         <span class="n">transparent_alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">transparent_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># 18. Save the picture with a specific size and quality</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="kp">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">progressive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">compression_level</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparent_color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span>
-         <span class="n">transparent_alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">transparent_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">transparent_blend</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="c1">#</span>
+<span class="c1"># 5. Save as a picture</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s1">&#39;1GWD.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14614,12 +14551,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 
-<div id="e0b2a2a8-2ee0-43ea-8e7b-c4e104cce4db" class="jupyter-widgets jp-OutputArea-output ">
+<div id="8edc516f-a460-44f1-882a-dbf225540cb7" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('e0b2a2a8-2ee0-43ea-8e7b-c4e104cce4db');
+var element = document.getElementById('8edc516f-a460-44f1-882a-dbf225540cb7');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "645415aaea5e46e6bc7dd09e15f3ac4b", "version_major": 2, "version_minor": 0}
+{"model_id": "176d1b9c206b4bbea68e057556e36478", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14628,7 +14565,7 @@ var element = document.getElementById('e0b2a2a8-2ee0-43ea-8e7b-c4e104cce4db');
 <div class="jp-OutputArea-child">
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>No such file: 1gwd.pdb
+<pre>No such file: 1GWD.pdb
 </pre>
 </div>
 </div>
@@ -14668,7 +14605,7 @@ var element = document.getElementById('e0b2a2a8-2ee0-43ea-8e7b-c4e104cce4db');
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"076fb8f62a464956b697fc85e01a9a7f": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "645415aaea5e46e6bc7dd09e15f3ac4b": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_076fb8f62a464956b697fc85e01a9a7f"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"176d1b9c206b4bbea68e057556e36478": {"model_module": "nglview-js-widgets", "model_module_version": "3.0.1", "model_name": "ColormakerRegistryModel", "state": {"_dom_classes": [], "_model_module": "nglview-js-widgets", "_model_module_version": "3.0.1", "_model_name": "ColormakerRegistryModel", "_msg_ar": [], "_msg_q": [], "_ready": false, "_view_count": null, "_view_module": "nglview-js-widgets", "_view_module_version": "3.0.1", "_view_name": "ColormakerRegistryView", "layout": "IPY_MODEL_cc7d1c30e35842d1a6248fa471e52e92"}}, "cc7d1c30e35842d1a6248fa471e52e92": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
