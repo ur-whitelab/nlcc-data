@@ -1,6 +1,6 @@
 def polar_count(sequence):
     """
-    This function counts the number of polar, non-charged amino acids in the given sequence
+    This function counts the number of polar uncharged amino acids in the given sequence
     """
     [insert]
     return count
