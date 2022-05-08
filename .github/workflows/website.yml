@@ -28,7 +28,7 @@ jobs:
     - name: Evaluate
       env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          HUGGING_FACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
+          HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
       run: |
         mkdir -p dist/human
         nlcc-human --n 3 data/**/*.yml --out-dir /var/tmp --prompt insert > index.md
