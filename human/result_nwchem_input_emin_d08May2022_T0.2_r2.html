@@ -14483,22 +14483,26 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">     This function returns an input file for NWChem that computes the ground state energy of H2 using Hartree-Fock</span>
 <span class="sd">     &quot;&quot;&quot;</span>
      <span class="n">nw_input</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">     title &quot;H2 Hartree-Fock&quot;</span>
-<span class="s2">     memory total 1000 mb</span>
-<span class="s2">     geometry units angstroms</span>
-<span class="s2">     H 0.0 0.0 0.0</span>
-<span class="s2">     H 0.0 0.0 0.74</span>
-<span class="s2">     end</span>
-<span class="s2">     basis</span>
-<span class="s2">     * library sto-3g</span>
-<span class="s2">     end</span>
-<span class="s2">     dft</span>
-<span class="s2">     xc b3lyp</span>
-<span class="s2">     mult 1</span>
-<span class="s2">     iterations 1000</span>
-<span class="s2">     end</span>
-<span class="s2">     task dft energy</span>
-<span class="s2">     &quot;&quot;&quot;</span>
+<span class="s2">start h2</span>
+
+<span class="s2">title &quot;H2&quot;</span>
+
+<span class="s2">charge 0</span>
+<span class="s2">geometry units angstroms</span>
+<span class="s2">  H 0.0 0.0 0.0</span>
+<span class="s2">  H 0.0 0.0 1.4</span>
+<span class="s2">end</span>
+
+<span class="s2">basis</span>
+<span class="s2">  * library sto-3g</span>
+<span class="s2">end</span>
+
+<span class="s2">dft</span>
+<span class="s2">  xc b3lyp</span>
+<span class="s2">end</span>
+
+<span class="s2">task dft energy</span>
+<span class="s2">&quot;&quot;&quot;</span>
      <span class="k">return</span> <span class="n">nw_input</span>
 </pre></div>
 

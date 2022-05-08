@@ -14487,14 +14487,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="sd">Save to emoji.png</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="c1"># Make a sin wave</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># Make a plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;</span><span class="se">\U0001F600</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="c1"># Save the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\U0001F600</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;emoji.png&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -14523,7 +14519,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-OutputArea-child">
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>&lt;string&gt;:17: UserWarning: marker is redundantly defined by the &#39;marker&#39; keyword argument and the fmt string &#34;o&#34; (-&gt; marker=&#39;o&#39;). The keyword argument will take precedence.
+<pre>&lt;string&gt;:15: UserWarning: marker is redundantly defined by the &#39;marker&#39; keyword argument and the fmt string &#34;o&#34; (-&gt; marker=&#39;o&#39;). The keyword argument will take precedence.
 </pre>
 </div>
 </div>
