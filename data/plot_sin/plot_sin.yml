@@ -2,6 +2,6 @@ name: plot_sin
 language: python
 prompt: plot_sin.txt
 label: plot_sin.py
-context: numpy
+context: matplotlib
 test: plot_sin.py
 categories: plot, human

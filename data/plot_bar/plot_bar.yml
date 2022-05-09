@@ -2,6 +2,6 @@ name: plot_bar
 language: python
 prompt: plot_bar.txt
 label: plot_bar.py
-context: numpy
+context: matplotlib
 test: plot_bar.py
 categories: plot, human

@@ -2,6 +2,6 @@ name: plot_contour
 language: python
 prompt: plot_contour.txt
 label: plot_contour.py
-context: numpy
+context: matplotlib
 test: plot_contour.py
 categories: plot, human

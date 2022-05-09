@@ -2,6 +2,6 @@ name: plot_dual_axis
 language: python
 prompt: plot_dual_axis.txt
 label: plot_dual_axis.py
-context: numpy
+context: matplotlib
 test: plot_dual_axis.py
 categories: plot, human

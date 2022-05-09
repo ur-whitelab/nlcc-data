@@ -2,6 +2,6 @@ name: plot_emoji
 language: python
 prompt: plot_emoji.txt
 label: plot_emoji.py
-context: numpy
+context: matplotlib
 test: plot_emoji.py
 categories: plot, human

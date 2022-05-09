@@ -2,6 +2,6 @@ name: plot_sin_polar
 language: python
 prompt: plot_sin_polar.txt
 label: plot_sin_polar.py
-context: numpy
+context: matplotlib
 test: plot_sin_polar.py
 categories: plot, human
