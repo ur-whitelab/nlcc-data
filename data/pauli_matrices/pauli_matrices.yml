@@ -1,0 +1,7 @@
+name: pauli_matrices
+language: python
+prompt: pauli_matrices.txt
+label: pauli_matrices.py
+context: numpy
+test: pauli_matrices.py
+categories: qm, code
