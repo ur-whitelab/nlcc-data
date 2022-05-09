@@ -1,0 +1,6 @@
+def coupling(phi, A, B, C):
+    """
+    Returns the J coupling using the karplus equation
+    """
+    [insert]
+    return J
