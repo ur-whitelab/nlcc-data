@@ -1,0 +1,6 @@
+def bragg_angle(wavelength, d):
+    """
+    Returns the angle for Bragg scattering at wavelength and spacing d
+    """
+    [insert]
+    return theta
