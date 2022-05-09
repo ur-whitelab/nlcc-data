@@ -14482,20 +14482,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
      <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">     This function returns an input file for Gaussian that computes the ground state energy of H2 using Hartree-Fock</span>
 <span class="sd">     &quot;&quot;&quot;</span>
-     <span class="n">gauss_input</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">     </span><span class="si">%c</span><span class="s2">hk=h2.chk</span>
-<span class="s2">     %mem=1GB</span>
-<span class="s2">     %nproc=1</span>
+     <span class="n">gauss_input</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">%c</span><span class="s2">hk=h2.chk</span>
+<span class="s2">%mem=1GB</span>
+<span class="s2">%nproc=1</span>
+<span class="s2">#p hf/sto-3g</span>
 
-<span class="s2">     # hf/sto-3g</span>
+<span class="s2">H2</span>
 
-<span class="s2">     H2 molecule</span>
+<span class="s2">0 1</span>
+<span class="s2">H</span>
+<span class="s2">H 1 1.4</span>
 
-<span class="s2">     0 1</span>
-<span class="s2">     H</span>
-<span class="s2">     H 1 1.0</span>
-
-<span class="s2">     &quot;&quot;&quot;</span>
+<span class="s2">&quot;&quot;&quot;</span>
      <span class="k">return</span> <span class="n">gauss_input</span>
 </pre></div>
 

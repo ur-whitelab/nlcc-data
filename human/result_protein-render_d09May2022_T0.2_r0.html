@@ -14491,65 +14491,82 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="c1"># 1. import packages</span>
 <span class="kn">import</span> <span class="nn">nglview</span> <span class="k">as</span> <span class="nn">nv</span>
-<span class="kn">import</span> <span class="nn">mdtraj</span> <span class="k">as</span> <span class="nn">md</span>
+<span class="kn">from</span> <span class="nn">nglview.utils</span> <span class="kn">import</span> <span class="n">get_colors_from_b64</span>
 
 <span class="c1"># 2. Download 1GWD protein</span>
-<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;http://www.rcsb.org/pdb/files/1GWD.pdb&#39;</span><span class="p">)</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="kp">load</span><span class="p">(</span><span class="s1">&#39;1GWD.pdb&#39;</span><span class="p">)</span>
 
 <span class="c1"># 3. Render it</span>
 <span class="kp">view</span> <span class="o">=</span> <span class="n">nv</span><span class="o">.</span><span class="n">show_mdtraj</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
-<span class="kp">view</span>
 
 <span class="c1"># 4. Embed in jupyter notebook</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;protein&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;spacefill&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;hyperball&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;licorice&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;cartoon&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;not water&#39;</span><span class="p">)</span>
-<span class="kp">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="s1">&#39;ball+stick</span>
+<span class="kp">view</span>
+
+<span class="c1"># 5. Add a surface</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_surface</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># 6. Add a cartoon</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 7. Add a line</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_line</span><span class="p">()</span>
+
+<span class="c1"># 8. Add a sphere</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_spacefill</span><span class="p">(</span><span class="n">radiusType</span><span class="o">=</span><span class="s1">&#39;covalent&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># 9. Add a ball and stick</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_ball_and_stick</span><span class="p">()</span>
+
+<span class="c1"># 10. Add a hyperball</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_hyperball</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 11. Add a trace</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;residueindex&#39;</span><span class="p">)</span>
+
+<span class="c1"># 12. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 13. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 14. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 15. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 16. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 17. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 18. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 19. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 20. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 21. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 22. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 23. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 24. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 25. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b64</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># 26. Add a cartoon with color</span>
+<span class="kp">view</span><span class="o">.</span><span class="n">add_cartoon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">get_colors_from_b</span>
 </pre></div>
 
 </div>
@@ -14569,7 +14586,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-OutputArea-child">
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>EOL while scanning string literal (&lt;string&gt;, line 73)
+<pre>unexpected EOF while parsing (&lt;string&gt;, line 90)
 </pre>
 </div>
 </div>
