@@ -1,0 +1,6 @@
+name:  velocity_verlet_integration
+language:  python
+prompt:  verlet.txt
+context:  numpy
+test:  verlet.py
+categories: code, sim
