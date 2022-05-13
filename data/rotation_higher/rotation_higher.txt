@@ -1,0 +1,6 @@
+def e_rot(B,J,D):
+    """
+    Returns the quantum rotational energy for level J and constants B, D
+    """
+    [insert]
+    return E_rot

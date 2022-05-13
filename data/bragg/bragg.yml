@@ -1,0 +1,7 @@
+name: braggant
+language: python
+prompt: bragg.txt
+label: bragg.py
+context: numpy
+test: bragg.py
+categories: spectroscopy, code

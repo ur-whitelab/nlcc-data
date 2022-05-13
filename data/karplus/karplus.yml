@@ -1,0 +1,7 @@
+name: karplusant
+language: python
+prompt: karplus.txt
+label: karplus.py
+context: numpy
+test: karplus.py
+categories: spectroscopy, code

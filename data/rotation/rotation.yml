@@ -1,0 +1,7 @@
+name: rotationant
+language: python
+prompt: rotation.txt
+label: rotation.py
+context: numpy
+test: rotation.py
+categories: spectroscopy, code

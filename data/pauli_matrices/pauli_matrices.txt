@@ -1,0 +1,6 @@
+def pauli():
+    """
+    This function returns the three pauli matrices
+    """
+    [insert]
+    return sigma_x, sigma_y, sigma_z

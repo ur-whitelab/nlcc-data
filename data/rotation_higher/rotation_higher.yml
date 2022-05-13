@@ -1,0 +1,7 @@
+name: rotation_higherant
+language: python
+prompt: rotation_higher.txt
+label: rotation_higher.py
+context: numpy
+test: rotation_higher.py
+categories: spectroscopy, code
