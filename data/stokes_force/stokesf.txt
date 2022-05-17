@@ -1,0 +1,4 @@
+def stokes_f(eta,r,v):
+   """
+   This function calculates and returns the force of viscosity on a small sphere moving through a viscous fluid in SI unit, according to Stokes' law.
+   """
