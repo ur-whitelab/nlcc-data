@@ -3,4 +3,4 @@ language: python
 prompt: random_walk.txt
 context: numpy
 test: random_walk.py
-categories: stats, code, sim
+categories: stats, code, sim, human

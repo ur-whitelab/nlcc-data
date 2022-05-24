@@ -4,4 +4,4 @@ prompt: sasa.txt
 label: sasa.py
 context: mdtraj
 test: sasa.py
-categories: bio, md, code
+categories: bio, md, code, human

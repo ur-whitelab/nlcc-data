@@ -4,4 +4,4 @@ prompt: karplus.txt
 label: karplus.py
 context: numpy
 test: karplus.py
-categories: spectroscopy, code
+categories: spectroscopy, code, human

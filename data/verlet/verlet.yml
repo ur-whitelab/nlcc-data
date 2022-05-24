@@ -3,4 +3,4 @@ language:  python
 prompt:  verlet.txt
 context:  numpy
 test:  verlet.py
-categories: code, sim
+categories: code, sim, human

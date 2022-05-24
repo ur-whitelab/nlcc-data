@@ -3,4 +3,4 @@ language:  python
 prompt:  LD.txt
 context:  numpy
 test:  LD.py
-categories: code, sim
+categories: code, sim, human
