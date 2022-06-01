@@ -1,0 +1,4 @@
+def get_distance():
+  """
+  This fucntion returns the end to end distance of a protein in nanometer
+  """
