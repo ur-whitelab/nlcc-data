@@ -1,0 +1,4 @@
+def temp_generator_nlcc():
+  """
+  This function generates a list of 40 temperatures from 300 to 400
+  """

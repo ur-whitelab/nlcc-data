@@ -1,0 +1,6 @@
+name: gen_temp_list
+language: python
+prompt: gen_temp_list.txt
+label: gen_temp_list.py
+context: numpy
+test: gen_temp_list.py
