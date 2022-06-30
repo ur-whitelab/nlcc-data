@@ -1,0 +1,6 @@
+name: discretize
+language: python
+prompt: discretize.txt
+label: discretize.py
+context: numpy
+test: discretize.py

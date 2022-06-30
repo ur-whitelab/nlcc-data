@@ -1,0 +1,3 @@
+def discretize_fn(location,grid):
+    """Return a tuple of discretized grid values of a location in a 2D grid.
+    """
