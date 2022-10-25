@@ -1,0 +1,6 @@
+name: cog
+language: python
+prompt: cog.txt
+label: cog.py
+context: mdtraj
+test: cog.py
