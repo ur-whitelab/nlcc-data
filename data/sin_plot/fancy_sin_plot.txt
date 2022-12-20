@@ -1,0 +1,4 @@
+def fancy_sin_plot(marker,markersize,linestyle,color):
+    """ Plot and save a sin curve with given marker, markersize,
+        linestyle,color
+    """
