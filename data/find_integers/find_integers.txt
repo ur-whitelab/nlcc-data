@@ -1,0 +1,4 @@
+def find_integers(n, l, m):
+  """
+  This function returns a sorted list of integers which are divisible by l and multiplier of m, belonging to the range [1,n]
+  """

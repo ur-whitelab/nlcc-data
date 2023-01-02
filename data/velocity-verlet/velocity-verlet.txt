@@ -1,0 +1,7 @@
+def vel_verlet(x0, v0, n, m, f(x), del_t):
+   """
+   1 This function implements velocity verlet algorithm for a particle of mass m in one dimension with initial position x0 and velocity v0.
+   2 f(x) is a function which calculates the force applied on particle and time interval is del_t.
+   3 It runs for n steps and return a final array containing position, velocity of the particle for each step, including initial position and velocity as well.
+   """
+
