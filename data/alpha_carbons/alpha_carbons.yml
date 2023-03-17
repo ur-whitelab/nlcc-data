@@ -1,0 +1,6 @@
+name: alpha_carbons
+language: python
+prompt: alpha_carbons.txt
+label: alpha_carbons.py
+context: mdtraj
+test: alpha_carbons.py
