@@ -1,0 +1,6 @@
+name: mean
+language: python
+prompt: mean.txt
+label: mean.py
+context: python
+test: mean.py
